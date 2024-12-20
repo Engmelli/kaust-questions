@@ -2671,15 +2671,10 @@
         {
             "question": "How do you combine two lists using zip?\na = [1,2,3]\nb = ['x','y','z']",
             "options": [
-                "zip(a,",
-                "",
-                "a.zip(",
-                "",
-                "combine(a,",
-                "",
-                "merge(a,",
-                "",
-                "zip(a,"
+                "zip(a,b)",
+                "a.zip(b)",
+                "combine(a,b)",
+                "merge(a,b)"
             ],
             "answer": "zip(a,b)",
             "explanation": "zip() creates pairs from multiple iterables."
