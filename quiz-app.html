@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAUST Quiz</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f2f5;
+        }
+        .quiz-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .quiz-header {
+            margin-bottom: 20px;
+        }
+        .progress {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        .score {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+        .question {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .option {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .option:hover {
+            background-color: #f5f5f5;
+        }
+        .option.correct {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+        }
+        .option.incorrect {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+            color: #721c24;
+        }
+        .option.disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        .explanation {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            display: none;
+        }
+        .next-btn {
+            display: none;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .next-btn:hover {
+            background-color: #0056b3;
+        }
+        .results {
+            text-align: center;
+            display: none;
+        }
+        .restart-btn {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .restart-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <div class="quiz-header">
+            <h1>KAUST Quiz</h1>
+            <div class="progress"></div>
+            <div class="score"></div>
+        </div>
+        <div id="quiz">
+            <div class="question"></div>
+            <div class="options"></div>
+            <div class="explanation"></div>
+            <button class="next-btn">Next Question</button>
+        </div>
+        <div class="results">
+            <h2>Quiz Completed!</h2>
+            <p class="final-score"></p>
+            <button class="restart-btn">Restart Quiz</button>
+        </div>
+    </div>
+    <footer>
+        <p>Questions by Abdulrahman Alfrihidi Twitter: dhome996</p>
+        <p>Website by Abdulrahman Malibari Twitter: Engmelli1</p>
+    </footer>
+    <script>
+        class Quiz {
+            constructor() {
+                this.questions = [];
+                this.currentQuestion = 0;
+                this.score = 0;
+                this.answered = false;
+
+                this.quizElement = document.getElementById('quiz');
+                this.resultsElement = document.querySelector('.results');
+                this.progressElement = document.querySelector('.progress');
+                this.scoreElement = document.querySelector('.score');
+                this.questionElement = document.querySelector('.question');
+                this.optionsElement = document.querySelector('.options');
+                this.explanationElement = document.querySelector('.explanation');
+                this.nextButton = document.querySelector('.next-btn');
+                this.restartButton = document.querySelector('.restart-btn');
+
+                this.nextButton.addEventListener('click', () => this.nextQuestion());
+                this.restartButton.addEventListener('click', () => this.restartQuiz());
+
+                this.loadQuestions();
+            }
+
+            async loadQuestions() {
+                try {
+                    const response = await fetch('questions.json');
+                    const data = await response.json();
+                    this.questions = data.questions || data;
+                    this.startQuiz();
+                } catch (error) {
+                    console.error('Error loading questions:', error);
+                    this.questionElement.textContent = 'Error loading questions. Please try again later.';
+                }
+            }
+
+            startQuiz() {
+                this.currentQuestion = 0;
+                this.score = 0;
+                this.showQuestion();
+            }
+
+            showQuestion() {
+                const question = this.questions[this.currentQuestion];
+                this.answered = false;
+                
+                this.progressElement.textContent = `Question ${this.currentQuestion + 1} of ${this.questions.length}`;
+                this.scoreElement.textContent = `Score: ${this.score}/${this.currentQuestion}`;
+                this.questionElement.textContent = question.question;
+                this.optionsElement.innerHTML = '';
+                
+                const shuffledOptions = [...question.options];
+                for (let i = shuffledOptions.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [shuffledOptions[i], shuffledOptions[j]] = [shuffledOptions[j], shuffledOptions[i]];
+                }
+
+                shuffledOptions.forEach(option => {
+                    const button = document.createElement('button');
+                    button.className = 'option';
+                    button.textContent = option;
+                    button.addEventListener('click', () => this.checkAnswer(option));
+                    this.optionsElement.appendChild(button);
+                });
+
+                this.explanationElement.style.display = 'none';
+                this.nextButton.style.display = 'none';
+                this.quizElement.style.display = 'block';
+                this.resultsElement.style.display = 'none';
+            }
+
+            checkAnswer(selectedOption) {
+                if (this.answered) return;
+                
+                this.answered = true;
+                const question = this.questions[this.currentQuestion];
+                const correct = selectedOption === question.answer;
+                
+                if (correct) this.score++;
+
+                const options = this.optionsElement.querySelectorAll('.option');
+                options.forEach(option => {
+                    option.classList.add('disabled');
+                    if (option.textContent === question.answer) {
+                        option.classList.add('correct');
+                    } else if (option.textContent === selectedOption && !correct) {
+                        option.classList.add('incorrect');
+                    }
+                });
+
+                this.explanationElement.textContent = question.explanation;
+                this.explanationElement.style.display = 'block';
+                this.scoreElement.textContent = `Score: ${this.score}/${this.currentQuestion + 1}`;
+                this.nextButton.style.display = 'block';
+            }
+
+            nextQuestion() {
+                if (this.currentQuestion < this.questions.length - 1) {
+                    this.currentQuestion++;
+                    this.showQuestion();
+                } else {
+                    this.showResults();
+                }
+            }
+
+            showResults() {
+                this.quizElement.style.display = 'none';
+                this.resultsElement.style.display = 'block';
+                const finalScore = document.querySelector('.final-score');
+                const percentage = ((this.score / this.questions.length) * 100).toFixed(1);
+                finalScore.textContent = `Your Score: ${this.score}/${this.questions.length} (${percentage}%)`;
+            }
+
+            restartQuiz() {
+                this.startQuiz();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            new Quiz();
+        });
+    </script>
+</body>
+</html>

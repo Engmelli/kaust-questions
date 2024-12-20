@@ -1,0 +1,3041 @@
+{
+    "questions": [
+        {
+            "question": "What is the output of np.array([1, 2, 3]) + np.array([4, 5, 6])?",
+            "options": [
+                "[5, 7, 9]",
+                "[1, 2, 3, 4, 5, 6]",
+                "Error",
+                "[[1, 2, 3], [4, 5, 6]]"
+            ],
+            "answer": "[5, 7, 9]",
+            "explanation": "NumPy performs element-wise operations. When adding two arrays of the same\nshape, it adds corresponding elements."
+        },
+        {
+            "question": "Which pandas method is used to handle missing values?",
+            "options": [
+                "remove_null()",
+                "dropna()",
+                "delete_empty()",
+                "clean_data()"
+            ],
+            "answer": "dropna()",
+            "explanation": "dropna() is pandas' built-in method for removing rows or columns containing\nmissing values (NaN)."
+        },
+        {
+            "question": "In pandas, what does df.iloc[2:5, 1] select?",
+            "options": [
+                "Rows 2 through 4 of column 1",
+                "Rows 2 through 5 of column 1",
+                "Columns 2 through 4 of row 1",
+                "Columns 2 through 5 of row 1"
+            ],
+            "answer": "Rows 2 through 4 of column 1",
+            "explanation": "iloc uses integer-based indexing. The slice 2:5 selects positions 2,3,4 (5 is\nexclusive), and 1 selects the second column."
+        },
+        {
+            "question": "What's the correct way to create a datetime object for January 1, 2024?\npython\nCopy\n\nimport datetime",
+            "options": [
+                "datetime.datetime(2024, 1, 1)",
+                "datetime.date(2024, 1, 1)",
+                "datetime.time(2024, 1, 1)",
+                "datetime.create(2024, 1, 1)"
+            ],
+            "answer": "datetime.datetime(2024, 1, 1)",
+            "explanation": "datetime.datetime() creates a complete datetime object. The parameters are year,\nmonth, day."
+        },
+        {
+            "question": "What does this regular expression pattern match? r'\\d{3}-\\d{2}-\\d{4}'",
+            "options": [
+                "Email addresses",
+                "Phone numbers",
+                "Social Security numbers",
+                "IP addresses"
+            ],
+            "answer": "Social Security numbers",
+            "explanation": "The pattern matches three digits, followed by hyphen, two digits, hyphen, and four\ndigits (XXX-XX-XXXX format)."
+        },
+        {
+            "question": "What's the result of this pandas operation?\npython\nCopy\ndf.groupby('category')['value'].mean()",
+            "options": [
+                "Sums values in each category",
+                "Counts items in each category",
+                "Averages values in each category",
+                "Lists all values in each category"
+            ],
+            "answer": "Averages values in each category",
+            "explanation": "This groups the data by 'category' column and calculates the mean of 'value' column\nfor each group."
+        },
+        {
+            "question": "What does df.merge(df2, on='id', how='left') do?",
+            "options": [
+                "Concatenates df and df2",
+                "Keeps all rows from df, matching rows from df2",
+                "Keeps only matching rows between df and df2",
+                "Combines all rows from both dataframes"
+            ],
+            "answer": "Keeps all rows from df, matching rows from df2",
+            "explanation": "A left merge keeps all rows from the left dataframe (df) and only matching rows\nfrom the right dataframe (df2)."
+        },
+        {
+            "question": "What's the output of np.arange(0, 10, 2)?",
+            "options": [
+                "[0, 2, 4, 6, 8]",
+                "[0, 2, 4, 6, 8, 10]",
+                "[2, 4, 6, 8]",
+                "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]"
+            ],
+            "answer": "[0, 2, 4, 6, 8]",
+            "explanation": "np.arange(start, stop, step) creates array from start to stop-1 with given step size."
+        },
+        {
+            "question": "Which method creates a pivot table in pandas?",
+            "options": [
+                "pivot()",
+                "pivot_table()",
+                "crosstab()",
+                "transpose()"
+            ],
+            "answer": "pivot_table()",
+            "explanation": "pivot_table() is the primary method for creating pivot tables, allowing for\naggregation of data."
+        },
+        {
+            "question": "What does lambda x: x.map(lambda y: y**2) do when applied to a DataFrame column?",
+            "options": [
+                "Squares the column values",
+                "Returns the column unchanged",
+                "Raises an error",
+                "Creates a new column"
+            ],
+            "answer": "Squares the column values",
+            "explanation": "The nested lambda functions map over each element and square it."
+        },
+        {
+            "question": "How do you select rows in a DataFrame where column 'age' is greater than 25?",
+            "options": [
+                "df[df.age > 25]",
+                "df.where(age > 25)",
+                "df.query('age > 25')",
+                "Both a and c"
+            ],
+            "answer": "Both a and c",
+            "explanation": "Both boolean indexing (df[df.age > 25]) and query method work for filtering rows."
+        },
+        {
+            "question": "What's the purpose of NumPy's reshape() function?",
+            "options": [
+                "Changes data types",
+                "Changes array dimensions",
+                "Sorts array elements",
+                "Filters array elements"
+            ],
+            "answer": "Changes array dimensions",
+            "explanation": "reshape() reorganizes array elements into a new shape while maintaining the total\nnumber of elements."
+        },
+        {
+            "question": "What's the result of pd.date_range('2024-01-01', periods=5, freq='M')?",
+            "options": [
+                "First 5 days of January 2024",
+                "Last day of each month for 5 months",
+                "First day of each month for 5 months",
+                "Every Monday for 5 weeks"
+            ],
+            "answer": "Last day of each month for 5 months",
+            "explanation": "freq='M' creates timestamps for the last day of each month, starting from January\n2024."
+        },
+        {
+            "question": "Which regular expression matches email addresses?",
+            "options": [
+                "\\w+@\\w+\\.\\w+",
+                "\\d{3}-\\d{3}-\\d{4}",
+                "https?://\\w+\\.\\w+",
+                "\\d+\\.\\d+\\.\\d+\\.\\d+"
+            ],
+            "answer": "\\w+@\\w+\\.\\w+",
+            "explanation": "This pattern matches one or more word characters, followed by @, more word\ncharacters, dot, and more word characters."
+        },
+        {
+            "question": "What's the difference between loc and iloc in pandas?",
+            "options": [
+                "loc uses labels, iloc uses positions",
+                "loc uses positions, iloc uses labels",
+                "They are identical",
+                "loc is for rows, iloc is for columns"
+            ],
+            "answer": "loc uses labels, iloc uses positions Explanation: loc uses index labels for selection,",
+            "explanation": "loc uses index labels for selection,\nwhile iloc uses integer positions."
+        },
+        {
+            "question": "What does pd.concat([df1, df2], axis=1) do?",
+            "options": [
+                "Stacks dataframes vertically",
+                "Joins dataframes horizontally",
+                "Merges on common columns",
+                "Creates a new dataframe"
+            ],
+            "answer": "Joins dataframes horizontally",
+            "explanation": "axis=1 concatenates dataframes side by side (column-wise concatenation)."
+        },
+        {
+            "question": "What's the purpose of np.random.seed()?",
+            "options": [
+                "Generates random numbers",
+                "Sets starting point for random generation",
+                "Shuffles arrays",
+                "Creates random arrays"
+            ],
+            "answer": "Sets starting point for random generation",
+            "explanation": "seed() sets the starting state for random number generation, making results\nreproducible."
+        },
+        {
+            "question": "How do you calculate the correlation between two DataFrame columns?",
+            "options": [
+                "df['A'].corr(df['B'])",
+                "df.correlation()",
+                "df.corr()",
+                "correlation(df['A'], df['B'])"
+            ],
+            "answer": "df['A'].corr(df['B'])",
+            "explanation": "corr() method between two series calculates their Pearson correlation coefficient."
+        },
+        {
+            "question": "What's the result of df.describe()?",
+            "options": [
+                "Shows column names",
+                "Shows basic statistics",
+                "Shows data types",
+                "Shows missing values"
+            ],
+            "answer": "Shows basic statistics",
+            "explanation": "describe() provides summary statistics including count, mean, std, min, quartiles,\nand max."
+        },
+        {
+            "question": "Which method modifies a DataFrame in place?",
+            "options": [
+                "sort_values()",
+                "sort_values(inplace=True)",
+                "sorted_values()",
+                "sort()"
+            ],
+            "answer": "sort_values(inplace=True)",
+            "explanation": "inplace=True modifier changes the original DataFrame instead of returning a new\ncopy."
+        },
+        {
+            "question": "What's the purpose of pd.get_dummies()?",
+            "options": [
+                "Removes dummy variables",
+                "Creates binary columns from categorical data",
+                "Identifies duplicate rows",
+                "Generates random data"
+            ],
+            "answer": "Creates binary columns from categorical data",
+            "explanation": "get_dummies() performs one-hot encoding, converting categorical variables to\nbinary columns."
+        },
+        {
+            "question": "Which NumPy function finds unique values? a) unique() b) distinct() c) different() d) set()\nAnswer:",
+            "options": [
+                "unique()",
+                "distinct()",
+                "different()",
+                "set()"
+            ],
+            "answer": "unique() Explanation: np.unique() returns sorted unique elements of an array.",
+            "explanation": "np.unique() returns sorted unique elements of an array."
+        },
+        {
+            "question": "What does df.fillna(method='ffill') do?",
+            "options": [
+                "Fills with zeros",
+                "Fills with mean",
+                "Fills with previous valid value",
+                "Removes NA values"
+            ],
+            "answer": "Fills with previous valid value",
+            "explanation": "ffill (forward fill) propagates the last valid observation forward to next missing\nvalues."
+        },
+        {
+            "question": "How do you select numeric columns in a DataFrame?",
+            "options": [
+                "df.numeric_columns()",
+                "df.select_dtypes(include=['number'])",
+                "df.get_numeric()",
+                "df.numbers"
+            ],
+            "answer": "df.select_dtypes(include=['number']) Explanation: select_dtypes() filters columns by",
+            "explanation": "select_dtypes() filters columns by\ntheir data type."
+        },
+        {
+            "question": "What's the output of np.linspace(0, 1, 5)?",
+            "options": [
+                "[0, 0.25, 0.5, 0.75, 1]",
+                "[0, 1, 2, 3, 4]",
+                "[0, 0.2, 0.4, 0.6, 0.8]",
+                "[0, 1]"
+            ],
+            "answer": "[0, 0.25, 0.5, 0.75, 1]",
+            "explanation": "linspace creates array of 5 evenly spaced numbers from 0 to 1 inclusive."
+        },
+        {
+            "question": "What does df.stack() do?",
+            "options": [
+                "Sorts the DataFrame",
+                "Pivots long to wide",
+                "Pivots wide to long",
+                "Adds new columns"
+            ],
+            "answer": "Pivots wide to long",
+            "explanation": "stack() rotates DataFrame from wide to long format, moving column labels into\nindex levels."
+        },
+        {
+            "question": "Which method adds a new column based on existing columns?",
+            "options": [
+                "df.add_column()",
+                "df.assign()",
+                "df.insert()",
+                "Both b and c"
+            ],
+            "answer": "Both b and c",
+            "explanation": "Both assign() and insert() can add new columns, but with different syntax and\nbehavior."
+        },
+        {
+            "question": "What's the purpose of pd.cut()?",
+            "options": [
+                "Removes outliers",
+                "Splits continuous data into bins",
+                "Truncates strings",
+                "Divides DataFrame"
+            ],
+            "answer": "Splits continuous data into bins Explanation: cut() discretizes continuous data into",
+            "explanation": "cut() discretizes continuous data into\ncategorical bins."
+        },
+        {
+            "question": "How do you check for NaN values in a DataFrame?",
+            "options": [
+                "df.isna()",
+                "df.isnull()",
+                "df.has_nan()",
+                "Both a and b"
+            ],
+            "answer": "Both a and b",
+            "explanation": "isna() and isnull() are aliases, both check for missing values."
+        },
+        {
+            "question": "What does pd.melt() do?",
+            "options": [
+                "Removes columns",
+                "Combines columns",
+                "Transforms wide to long format",
+                "Sorts data"
+            ],
+            "answer": "Transforms wide to long format",
+            "explanation": "melt() restructures data from wide to long format, unpivoting DataFrame."
+        },
+        {
+            "question": "Given the system of equations:\n2x + y = 4\n4x + 2y = 8\nWhat does the determinant tell us about this system?",
+            "options": [
+                "Has unique solution",
+                "Has infinite solutions",
+                "Has no solution",
+                "Cannot determine"
+            ],
+            "answer": "Has infinite solutions",
+            "explanation": "The second equation is a multiple of the first (2\u00d7), making the system linearly\ndependent. The determinant is zero, indicating infinite solutions."
+        },
+        {
+            "question": "",
+            "options": [
+                "[3, 8]",
+                "11",
+                "2",
+                "[4, 6]"
+            ],
+            "answer": "11",
+            "explanation": "Dot product = 1\u00d73 + 2\u00d74 = 3 + 8 = 11"
+        },
+        {
+            "question": "What is the rank of the matrix:\n[1 2 3]\n[2 4 6]\n[3 6 9]",
+            "options": [
+                "3",
+                "2",
+                "1",
+                "0"
+            ],
+            "answer": "1 Explanation: Each row is a multiple of [1 2 3], making only one linearly",
+            "explanation": "Each row is a multiple of [1 2 3], making only one linearly\nindependent row."
+        },
+        {
+            "question": "In a 3\u00d73 matrix, if two eigenvalues are 2 and 3, what is the trace?",
+            "options": [
+                "6",
+                "5",
+                "Cannot determine",
+                "1"
+            ],
+            "answer": "Cannot determine",
+            "explanation": "The trace equals sum of eigenvalues, but we don't know the third eigenvalue."
+        },
+        {
+            "question": "If matrix A transforms vector [1,0] to [2,1] and [0,1] to [-1,2], what is A?",
+            "options": [
+                "[[2 -1],[1 2]]",
+                "[[2 1],[-1 2]]",
+                "[[1 2],[2 1]]",
+                "[[2 2],[1 1]]"
+            ],
+            "answer": "[[2 -1],[1 2]]",
+            "explanation": "The columns of A are the images of the standard basis vectors."
+        },
+        {
+            "question": "What happens to the determinant when you multiply a matrix by 2?",
+            "options": [
+                "Multiplied by 2",
+                "Multiplied by 4",
+                "Multiplied by 8",
+                "Remains same"
+            ],
+            "answer": "Multiplied by 4",
+            "explanation": "For a 2\u00d72 matrix, multiplying by k multiplies determinant by k^2."
+        },
+        {
+            "question": "If vectors v and w are linearly dependent, what can we say about v\u00d7w?",
+            "options": [
+                "Zero vector",
+                "Unit vector",
+                "Parallel to v",
+                "Perpendicular to w"
+            ],
+            "answer": "Zero vector",
+            "explanation": "Linear dependency means one vector is a scalar multiple of the other, making cross\nproduct zero."
+        },
+        {
+            "question": "Which property of matrices do you use to prove A(BC) = (AB)C?",
+            "options": [
+                "Commutativity",
+                "Associativity",
+                "Distributivity",
+                "Identity"
+            ],
+            "answer": "Associativity",
+            "explanation": "Matrix multiplication is associative, allowing regrouping of operations."
+        },
+        {
+            "question": "For a 3\u00d73 matrix, if det(A) = 2, what is det(A^2)?",
+            "options": [
+                "2",
+                "4",
+                "8",
+                "16"
+            ],
+            "answer": "4",
+            "explanation": "det(AB) = det(A)\u00d7det(B), so det(A^2) = det(A)\u00d7det(A) = 4"
+        },
+        {
+            "question": "What does it mean if a matrix has an eigenvalue of 0?",
+            "options": [
+                "Matrix is invertible",
+                "Matrix is singular",
+                "Matrix is symmetric",
+                "Matrix is orthogonal"
+            ],
+            "answer": "Matrix is singular",
+            "explanation": "Zero eigenvalue means matrix is singular (non-invertible), having non-trivial null\nspace."
+        },
+        {
+            "question": "If matrix A has eigenvector v with eigenvalue \u03bb, what is (A-\u03bbI)v equal to?",
+            "options": [
+                "v",
+                "\u03bbv",
+                "Zero vector",
+                "Av"
+            ],
+            "answer": "Zero vector",
+            "explanation": "By definition, (A-\u03bbI)v = Av-\u03bbv = \u03bbv-\u03bbv = 0"
+        },
+        {
+            "question": "What is the geometric meaning of det(A) = -1?",
+            "options": [
+                "Reflection only",
+                "Rotation only",
+                "Reflection and/or rotation",
+                "Neither reflection nor rotation"
+            ],
+            "answer": "Reflection and/or rotation",
+            "explanation": "det = -1 means orientation-reversing transformation, could be reflection or\ncombination with rotation."
+        },
+        {
+            "question": "If A is 3\u00d73 with rank 2, how many linearly independent eigenvectors can it have?",
+            "options": [
+                "1",
+                "2",
+                "3",
+                "Depends on A"
+            ],
+            "answer": "Depends on A",
+            "explanation": "Rank 2 means null space dimension 1, but A might still have 3 independent\neigenvectors."
+        },
+        {
+            "question": "",
+            "options": [
+                "Matrix transposition",
+                "Adding identity matrix",
+                "Similar transformation",
+                "Matrix multiplication"
+            ],
+            "answer": "Similar transformation Explanation:",
+            "explanation": "Similar matrices P^(-1)AP share same eigenvalues."
+        },
+        {
+            "question": "What is the row echelon form of:\n[1 2 3]\n[4 5 6]\n[7 8 9]",
+            "options": [
+                "All zeros",
+                "Upper triangular",
+                "Only first two rows nonzero",
+                "One nonzero row"
+            ],
+            "answer": "Only first two rows nonzero",
+            "explanation": "Matrix is rank 2, so row echelon form has two nonzero rows."
+        },
+        {
+            "question": "If vectors u, v, w span R\u00b3, what can we say about them?",
+            "options": [
+                "They are orthogonal",
+                "They are linearly independent",
+                "They are unit vectors",
+                "Their sum is zero"
+            ],
+            "answer": "They are linearly independent",
+            "explanation": "To span R\u00b3, three vectors must be linearly independent."
+        },
+        {
+            "question": "What is the null space of a 3\u00d73 identity matrix?",
+            "options": [
+                "R\u00b3",
+                "{0}",
+                "R\u00b2",
+                "Empty set"
+            ],
+            "answer": "{0}",
+            "explanation": "Identity matrix is invertible, so null space contains only zero vector."
+        },
+        {
+            "question": "For which matrix is every nonzero vector an eigenvector?",
+            "options": [
+                "Zero matrix",
+                "Identity matrix",
+                "Scalar multiple of identity",
+                "Any diagonal matrix"
+            ],
+            "answer": "Scalar multiple of identity",
+            "explanation": "\u03bbI has every nonzero vector as eigenvector with eigenvalue \u03bb."
+        },
+        {
+            "question": "What's preserved under similar transformation P^(-1)AP?",
+            "options": [
+                "Matrix entries",
+                "Eigenvalues only",
+                "Both eigenvalues and eigenvectors",
+                "Neither eigenvalues nor eigenvectors"
+            ],
+            "answer": "Eigenvalues only",
+            "explanation": "Similar transformations preserve eigenvalues but transform eigenvectors."
+        },
+        {
+            "question": "If A\u00b2 = A, what can we say about eigenvalues?",
+            "options": [
+                "Must be 1",
+                "Must be 0 or 1",
+                "Must be \u00b11",
+                "Can be any value"
+            ],
+            "answer": "Must be 0 or 1",
+            "explanation": "If \u03bb is eigenvalue, \u03bb\u00b2 = \u03bb, so \u03bb = 0 or 1."
+        },
+        {
+            "question": "What's the relationship between A's column space and row space dimensions?",
+            "options": [
+                "Column space larger",
+                "Row space larger",
+                "Equal",
+                "No relationship"
+            ],
+            "answer": "Equal",
+            "explanation": "Dimension of column space equals dimension of row space, both equal to matrix\nrank."
+        },
+        {
+            "question": "For invertible A, what is (A^(-1))^T equal to?",
+            "options": [
+                "A",
+                "A^T",
+                "(A^T)^(-1)",
+                "-A"
+            ],
+            "answer": "(A^T)^(-1)",
+            "explanation": "Inverse of transpose equals transpose of inverse."
+        },
+        {
+            "question": "What does it mean if matrix A satisfies A^T = -A?",
+            "options": [
+                "A is symmetric",
+                "A is skew-symmetric",
+                "A is orthogonal",
+                "A is diagonal"
+            ],
+            "answer": "A is skew-symmetric",
+            "explanation": "Definition of skew-symmetric matrix is A^T = -A."
+        },
+        {
+            "question": "If A is 3\u00d73 with eigenvalues {1,1,2}, what is trace(A)?",
+            "options": [
+                "1",
+                "2",
+                "3",
+                "4"
+            ],
+            "answer": "4",
+            "explanation": "Trace equals sum of eigenvalues: 1 + 1 + 2 = 4"
+        },
+        {
+            "question": "What's the dimension of solution space for homogeneous system Ax = 0 if A is 3\u00d74 with rank\n2?",
+            "options": [
+                "1",
+                "2",
+                "3",
+                "4"
+            ],
+            "answer": "2",
+            "explanation": "Dimension = number of variables (4) - rank (2) = 2"
+        },
+        {
+            "question": "If vectors v\u2081, v\u2082 are orthogonal, what is their dot product?",
+            "options": [
+                "1",
+                "0",
+                "-1",
+                "Cannot determine"
+            ],
+            "answer": "0",
+            "explanation": "Orthogonal vectors have zero dot product."
+        },
+        {
+            "question": "What happens to matrix rank under elementary row operations?",
+            "options": [
+                "Increases",
+                "Decreases",
+                "Stays same",
+                "May change"
+            ],
+            "answer": "Stays same",
+            "explanation": "Elementary row operations preserve linear dependencies, thus rank."
+        },
+        {
+            "question": "For which matrix is (AB)^T = B^T A^T always true?",
+            "options": [
+                "Any matrices",
+                "Square matrices",
+                "Symmetric matrices",
+                "Diagonal matrices"
+            ],
+            "answer": "Any matrices",
+            "explanation": "This is a fundamental property of matrix transpose, true for all valid matrix\nproducts."
+        },
+        {
+            "question": "If A has eigenpair (\u03bb,v), what is eigenpair of A^2?",
+            "options": [
+                "(\u03bb,v)",
+                "(\u03bb\u00b2,v)",
+                "(2\u03bb,v)",
+                "(\u03bb,2v)"
+            ],
+            "answer": "(\u03bb\u00b2,v)",
+            "explanation": "A\u00b2v = A(Av) = A(\u03bbv) = \u03bb(Av) = \u03bb(\u03bbv) = \u03bb\u00b2v"
+        },
+        {
+            "question": "What is the nullity of a 3\u00d73 matrix with rank 2?",
+            "options": [
+                "0",
+                "1",
+                "2",
+                "3"
+            ],
+            "answer": "1",
+            "explanation": "Nullity = dimension - rank = 3 - 2 = 1"
+        },
+        {
+            "question": "If A is invertible 2\u00d72, what is det(adj(A))?",
+            "options": [
+                "det(A)",
+                "[det(A)]\u00b2",
+                "1/det(A)",
+                "1"
+            ],
+            "answer": "[det(A)]\u00b2",
+            "explanation": "For 2\u00d72 matrix, det(adj(A)) = [det(A)]^(n-1) where n=2"
+        },
+        {
+            "question": "Which statement about orthogonal matrices is false?",
+            "options": [
+                "Inverse equals transpose",
+                "Determinant is \u00b11",
+                "Preserves dot products",
+                "Has complex eigenvalues"
+            ],
+            "answer": "Has complex eigenvalues",
+            "explanation": "Orthogonal matrices can have real eigenvalues \u00b11"
+        },
+        {
+            "question": "What is the reduced row echelon form of:\n[1 2]\n[2 4]",
+            "options": [
+                "[[1 2][0 0]]",
+                "[[1 0][0 1]]",
+                "[[1 2][0 0]]",
+                "[[0 0][0 0]]"
+            ],
+            "answer": "[[1 2][0 0]]",
+            "explanation": "Matrix is rank 1, second row reduces to zero."
+        },
+        {
+            "question": "If A is similar to B, what must be true?",
+            "options": [
+                "A = B",
+                "det(A) = det(B)",
+                "A and B have same size",
+                "All above"
+            ],
+            "answer": "All above",
+            "explanation": "Similar matrices share size, determinant, and other properties."
+        },
+        {
+            "question": "",
+            "options": [
+                "R\u00b2",
+                "Line through origin",
+                "Point at origin",
+                "Empty set"
+            ],
+            "answer": "Line through origin Explanation: Vectors are linearly dependent, span one-",
+            "explanation": "Vectors are linearly dependent, span one-\ndimensional subspace."
+        },
+        {
+            "question": "For what value of k is this system consistent?\nx + y = 1\n2x + 2y = k",
+            "options": [
+                "1",
+                "2",
+                "3",
+                "4"
+            ],
+            "answer": "2",
+            "explanation": "Second equation must be 2(x + y = 1) for consistency."
+        },
+        {
+            "question": "What is the geometric meaning of trace?",
+            "options": [
+                "Area scaling",
+                "Volume scaling",
+                "Average scaling",
+                "Rotation angle"
+            ],
+            "answer": "Average scaling",
+            "explanation": "Trace represents sum of scaling factors along principal directions."
+        },
+        {
+            "question": "If A has eigenvalues {2,3,4}, what are eigenvalues of A+2I?",
+            "options": [
+                "{4,5,6}",
+                "{2,3,4}",
+                "{4,6,8}",
+                "{1,2,3}"
+            ],
+            "answer": "{4,5,6}",
+            "explanation": "Adding kI adds k to each eigenvalue."
+        },
+        {
+            "question": "What is necessary for matrix to represent rotation?",
+            "options": [
+                "det = 1",
+                "det = \u00b11",
+                "trace = 0",
+                "trace = 1"
+            ],
+            "answer": "det = 1",
+            "explanation": "Pure rotation preserves orientation, requires det = 1."
+        },
+        {
+            "question": "If A^3 = 0, what are possible eigenvalues?",
+            "options": [
+                "Only 0",
+                "Only 1",
+                "Only -1",
+                "Any number"
+            ],
+            "answer": "Only 0",
+            "explanation": "If \u03bb is eigenvalue, \u03bb\u00b3 = 0, so \u03bb must be 0."
+        },
+        {
+            "question": "In a class of 30 students, what's the probability that at least two students share a birthday?\n(Assuming 365 days in a year)",
+            "options": [
+                "Less than 50%",
+                "Around 70%",
+                "Greater than 90%",
+                "100%"
+            ],
+            "answer": "Around 70%",
+            "explanation": "The birthday problem solution is 1 - (365/365 \u00d7 364/365 \u00d7 ... \u00d7 336/365), which is\napproximately 70.6% for 30 people."
+        },
+        {
+            "question": "If P(A) = 0.3, P(B) = 0.4, and P(A\u2229B) = 0.2, what is P(A\u222aB)?",
+            "options": [
+                "0.7",
+                "0.5",
+                "0.1",
+                "0.9"
+            ],
+            "answer": "0.5 Explanation: Using addition rule: P(A\u222aB) = P(A) + P(B) - P(A\u2229B) = 0.3 + 0.4 -",
+            "explanation": "Using addition rule: P(A\u222aB) = P(A) + P(B) - P(A\u2229B) = 0.3 + 0.4 -\n0.2 = 0.5"
+        },
+        {
+            "question": "",
+            "options": [
+                "68%",
+                "95%",
+                "99%",
+                "99.7%"
+            ],
+            "answer": "95% Explanation: The empirical rule states that",
+            "explanation": "The empirical rule states that\napproximately 95% of data falls within \u00b12 standard deviations of the mean."
+        },
+        {
+            "question": "What is the expected value of rolling a fair six-sided die?",
+            "options": [
+                "3",
+                "3.5",
+                "4",
+                "6"
+            ],
+            "answer": "3.5",
+            "explanation": "E(X) = (1+2+3+4+5+6)/6 = 21/6 = 3.5"
+        },
+        {
+            "question": "For a Binomial distribution with n=10 and p=0.5, what is the variance?",
+            "options": [
+                "2.5",
+                "5",
+                "10",
+                "0.25"
+            ],
+            "answer": "2.5",
+            "explanation": "Variance of binomial = np(1-p) = 10(0.5)(0.5) = 2.5"
+        },
+        {
+            "question": "If X is normally distributed with \u03bc=10 and \u03c3=2, what is P(X > 12)?",
+            "options": [
+                "0.5",
+                "0.16",
+                "0.84",
+                "0.32"
+            ],
+            "answer": "0.16",
+            "explanation": "Z = (12-10)/2 = 1, P(Z>1) \u2248 0.16 using standard normal table."
+        },
+        {
+            "question": "What is the correlation coefficient between X and -X?",
+            "options": [
+                "1",
+                "-1",
+                "0",
+                "Cannot determine"
+            ],
+            "answer": "-1",
+            "explanation": "Perfect negative correlation exists between a variable and its negative."
+        },
+        {
+            "question": "In MLE (Maximum Likelihood Estimation), what do we maximize?",
+            "options": [
+                "Probability of data",
+                "Likelihood of parameters",
+                "Prior probability",
+                "Posterior probability"
+            ],
+            "answer": "Likelihood of parameters",
+            "explanation": "MLE maximizes the likelihood function with respect to parameters given observed\ndata."
+        },
+        {
+            "question": "What is the width of a 95% confidence interval in terms of standard errors?",
+            "options": [
+                "\u00b11 SE",
+                "\u00b11.96 SE",
+                "\u00b12.58 SE",
+                "\u00b13 SE"
+            ],
+            "answer": "\u00b11.96 SE",
+            "explanation": "For 95% confidence, we use 1.96 standard errors (critical value from standard\nnormal distribution)."
+        },
+        {
+            "question": "If a hypothesis test has \u03b1 = 0.05, what does this mean?",
+            "options": [
+                "5% chance of Type II error",
+                "5% chance of Type I error",
+                "95% confidence level",
+                "95% power"
+            ],
+            "answer": "5% chance of Type I error",
+            "explanation": "Alpha (\u03b1) is the probability of Type I error (rejecting true null hypothesis)."
+        },
+        {
+            "question": "For joint probability P(A,B), which is always true?",
+            "options": [
+                "P(A,B) = P(A) + P(B)",
+                "P(A,B) \u2264 P(A)",
+                "P(A,B) = P(A)P(B)",
+                "P(A,B) > P(A)"
+            ],
+            "answer": "P(A,B) \u2264 P(A)",
+            "explanation": "Joint probability cannot exceed individual probabilities."
+        },
+        {
+            "question": "What is the relationship between covariance and correlation?",
+            "options": [
+                "They are the same",
+                "Correlation = Covariance/\u03c3\u2093\u03c3\u1d67",
+                "Correlation = Covariance \u00d7 \u03c3\u2093\u03c3\u1d67",
+                "No relationship"
+            ],
+            "answer": "Correlation = Covariance/\u03c3\u2093\u03c3\u1d67",
+            "explanation": "Correlation is standardized covariance, divided by product of standard deviations."
+        },
+        {
+            "question": "When conducting a t-test instead of z-test?",
+            "options": [
+                "Always",
+                "When n > 30",
+                "When \u03c3 is unknown",
+                "When data is normal"
+            ],
+            "answer": "When \u03c3 is unknown",
+            "explanation": "t-test is used when population standard deviation is unknown and must be\nestimated."
+        },
+        {
+            "question": "What does the Central Limit Theorem state about sample means?",
+            "options": [
+                "They are always normal",
+                "They approach normal as n increases",
+                "They equal population mean",
+                "They are always unbiased"
+            ],
+            "answer": "They approach normal as n increases",
+            "explanation": "Distribution of sample means approaches normal as sample size increases,\nregardless of population distribution."
+        },
+        {
+            "question": "In Bayesian statistics, what is the posterior proportional to?",
+            "options": [
+                "Prior \u00d7 Likelihood",
+                "Prior + Likelihood",
+                "Prior \u00f7 Likelihood",
+                "Prior - Likelihood"
+            ],
+            "answer": "Prior \u00d7 Likelihood",
+            "explanation": "Posterior \u221d Prior \u00d7 Likelihood by Bayes' theorem."
+        },
+        {
+            "question": "What affects the width of a confidence interval?",
+            "options": [
+                "Sample size only",
+                "Confidence level only",
+                "Standard deviation only",
+                "All of the above"
+            ],
+            "answer": "All of the above",
+            "explanation": "Interval width depends on sample size, confidence level, and population variability."
+        },
+        {
+            "question": "For a Bernoulli trial with p=0.3, what is the variance?",
+            "options": [
+                "0.3",
+                "0.7",
+                "0.21",
+                "0.09"
+            ],
+            "answer": "0.21",
+            "explanation": "Variance of Bernoulli = p(1-p) = 0.3(0.7) = 0.21"
+        },
+        {
+            "question": "What is the Monty Hall problem's correct solution?",
+            "options": [
+                "Stay with original choice",
+                "Switch doors",
+                "Doesn't matter",
+                "Depends on the host"
+            ],
+            "answer": "Switch doors",
+            "explanation": "Switching doors gives 2/3 probability of winning, while staying gives 1/3."
+        },
+        {
+            "question": "When is the sample variance an unbiased estimator?",
+            "options": [
+                "Always",
+                "Never",
+                "When using n-1 denominator",
+                "When using n denominator"
+            ],
+            "answer": "When using n-1 denominator",
+            "explanation": "Using n-1 (Bessel's correction) makes sample variance unbiased estimator of\npopulation variance."
+        },
+        {
+            "question": "What happens to Type I and Type II errors when \u03b1 decreases?",
+            "options": [
+                "Both decrease",
+                "Both increase",
+                "Type I decreases, Type II increases",
+                "Type I increases, Type II decreases"
+            ],
+            "answer": "Type I decreases, Type II increases",
+            "explanation": "Decreasing \u03b1 reduces Type I error but increases Type II error, showing inverse\nrelationship."
+        },
+        {
+            "question": "What is the derivative of f(x) = e^(2x+1)?",
+            "options": [
+                "e^(2x+1)",
+                "2e^(2x+1)",
+                "e^2x+1",
+                "(2x+1)e^(2x+1)"
+            ],
+            "answer": "2e^(2x+1)",
+            "explanation": "Using chain rule, d/dx[e^u] = e^u * du/dx, where u = 2x+1, so du/dx = 2."
+        },
+        {
+            "question": "For f(x,y) = x\u00b2y + 3xy\u00b2, what is \u2202f/\u2202x?",
+            "options": [
+                "2xy + 3y\u00b2",
+                "x\u00b2+ 6xy",
+                "2xy + 3y\u00b2",
+                "2x + 3y"
+            ],
+            "answer": "2xy + 3y\u00b2",
+            "explanation": "Take partial derivative with respect to x, treating y as constant."
+        },
+        {
+            "question": "In gradient descent, the learning rate should be:",
+            "options": [
+                "As large as possible",
+                "As small as possible",
+                "Neither too large nor too small",
+                "Equal to 1"
+            ],
+            "answer": "Neither too large nor too small",
+            "explanation": "Too large can cause overshooting, too small makes convergence slow."
+        },
+        {
+            "question": "What is the second derivative of log(x)?",
+            "options": [
+                "1/x",
+                "-1/x\u00b2",
+                "1/x\u00b2",
+                "-1/x"
+            ],
+            "answer": "-1/x\u00b2",
+            "explanation": "First derivative is 1/x, then take derivative again."
+        },
+        {
+            "question": "At a saddle point:",
+            "options": [
+                "Both eigenvalues of Hessian are positive",
+                "Both eigenvalues of Hessian are negative",
+                "Eigenvalues of Hessian have different signs",
+                "Eigenvalues of Hessian are zero"
+            ],
+            "answer": "Eigenvalues of Hessian have different signs",
+            "explanation": "Saddle points have positive curvature in one direction, negative in another."
+        },
+        {
+            "question": "The sigmoid function \u03c3(x) = 1/(1+e^(-x)) has derivative:",
+            "options": [
+                "\u03c3(x)(1-\u03c3(x))",
+                "\u03c3(x)",
+                "1-\u03c3(x)",
+                "e^x"
+            ],
+            "answer": "\u03c3(x)(1-\u03c3(x))",
+            "explanation": "Using chain rule and properties of exponentials."
+        },
+        {
+            "question": "Newton's method converges:",
+            "options": [
+                "Linearly",
+                "Quadratically",
+                "Exponentially",
+                "Logarithmically"
+            ],
+            "answer": "Quadratically",
+            "explanation": "Error roughly squares in each iteration, giving quadratic convergence."
+        },
+        {
+            "question": "The gradient points in:",
+            "options": [
+                "Direction of steepest descent",
+                "Direction of steepest ascent",
+                "Any direction",
+                "Perpendicular to level curves"
+            ],
+            "answer": "Direction of steepest ascent",
+            "explanation": "Gradient vector points in direction of maximum increase of function."
+        },
+        {
+            "question": "What is \u2202(xy)/\u2202x?",
+            "options": [
+                "y",
+                "x",
+                "1",
+                "0"
+            ],
+            "answer": "y",
+            "explanation": "When taking partial derivative with respect to x, treat y as constant."
+        },
+        {
+            "question": "In backpropagation, we compute:",
+            "options": [
+                "Forward derivatives",
+                "Partial derivatives",
+                "Chain rule backwards",
+                "Second derivatives"
+            ],
+            "answer": "Chain rule backwards",
+            "explanation": "Backpropagation applies chain rule from output to input layers."
+        },
+        {
+            "question": "If f'(a) = 0 and f''(a) > 0, point a is:",
+            "options": [
+                "= 0 and f''(",
+                "> 0, point a is:",
+                "Maximum",
+                "Minimum",
+                "Saddle point",
+                "Inflection point"
+            ],
+            "answer": "Minimum Explanation: First derivative zero and positive second derivative indicates",
+            "explanation": "First derivative zero and positive second derivative indicates\nminimum."
+        },
+        {
+            "question": "Chain rule states that d/dx[f(g(x))] equals:",
+            "options": [
+                "f'(x)g'(x)",
+                "f'(g(x))g'(x)",
+                "f(g'(x))",
+                "f'(g(x))"
+            ],
+            "answer": "f'(g(x))g'(x)",
+            "explanation": "Chain rule multiplies derivative of outer function (evaluated at inner function) by\nderivative of inner function."
+        },
+        {
+            "question": "The Hessian matrix contains:",
+            "options": [
+                "First derivatives",
+                "Second derivatives",
+                "Mixed partial derivatives",
+                "Both b and c"
+            ],
+            "answer": "Both b and c",
+            "explanation": "Hessian contains all second partial derivatives, including mixed partials."
+        },
+        {
+            "question": "For squared loss (y-\u0177)\u00b2, the derivative with respect to \u0177 is:",
+            "options": [
+                "2(y-\u0177)",
+                "-2(y-\u0177)",
+                "(y-\u0177)\u00b2",
+                "2y"
+            ],
+            "answer": "-2(y-\u0177)",
+            "explanation": "Take derivative of (y-\u0177)\u00b2 with respect to \u0177, chain rule gives -2(y-\u0177)."
+        },
+        {
+            "question": "Log loss for binary classification is:",
+            "options": [
+                "-(y log(\u0177) + (1-y)log(1-\u0177))",
+                "(y-\u0177)\u00b2",
+                "|y-\u0177|",
+                "y log(\u0177)"
+            ],
+            "answer": "-(y log(\u0177) + (1-y)log(1-\u0177))",
+            "explanation": "This is binary cross-entropy loss, standard for classification."
+        },
+        {
+            "question": "",
+            "options": [
+                "sec\u00b2(x)",
+                "-sec\u00b2(x)",
+                "cos\u00b2(x)",
+                "sin\u00b2(x)"
+            ],
+            "answer": "sec\u00b2(x)",
+            "explanation": "Using quotient rule on sin(x)/cos(x) or remembering standard derivative."
+        },
+        {
+            "question": "Gradient descent update rule is:",
+            "options": [
+                "x = x + \u03b1\u2207f",
+                "x = x - \u03b1\u2207f",
+                "x = -\u03b1\u2207f",
+                "x = \u03b1\u2207f"
+            ],
+            "answer": "x = x - \u03b1\u2207f",
+            "explanation": "Subtract gradient times learning rate to move downhill."
+        },
+        {
+            "question": "For f(x,y) = x\u00b2+y\u00b2, critical points occur at:",
+            "options": [
+                "(0,0) only",
+                "(1,1)",
+                "No points",
+                "All points"
+            ],
+            "answer": "(0,0) only",
+            "explanation": "Set both partial derivatives (2x,2y) to zero, only solution is origin."
+        },
+        {
+            "question": "Neural network activation functions should be:",
+            "options": [
+                "Linear",
+                "Discontinuous",
+                "Differentiable",
+                "Constant"
+            ],
+            "answer": "Differentiable",
+            "explanation": "Need differentiability for backpropagation to work."
+        },
+        {
+            "question": "The power rule d/dx[x^n] = nx^(n-1) works for:",
+            "options": [
+                "Positive integers only",
+                "All integers",
+                "All real numbers",
+                "All complex numbers"
+            ],
+            "answer": "All real numbers",
+            "explanation": "Power rule generalizes to all real exponents, not just integers."
+        },
+        {
+            "question": "What happens to variance and bias when you increase regularization strength \u03bb?",
+            "options": [
+                "Bias \u2191, Variance \u2193",
+                "Bias \u2193, Variance \u2191",
+                "Both \u2191",
+                "Both \u2193"
+            ],
+            "answer": "Bias \u2191, Variance \u2193",
+            "explanation": "Stronger regularization reduces model complexity, increasing bias but reducing\nvariance (overfitting)."
+        },
+        {
+            "question": "In dropout regularization with keep_prob = 0.8, what happens during testing?",
+            "options": [
+                "Randomly drop 20% of neurons",
+                "Multiple forward passes with different dropouts",
+                "No dropout, but scale activations by 0.8",
+                "No dropout, no scaling"
+            ],
+            "answer": "No dropout, no scaling",
+            "explanation": "During testing, all neurons are used without scaling since scaling was handled\nduring training."
+        },
+        {
+            "question": "Adam optimization combines:",
+            "options": [
+                "RMSprop and Momentum",
+                "Momentum and Learning rate decay",
+                "RMSprop and Dropout",
+                "Mini-batch and RMSprop"
+            ],
+            "answer": "RMSprop and Momentum",
+            "explanation": "Adam combines momentum (first moment) with RMSprop (second moment) for\nadaptive learning."
+        },
+        {
+            "question": "What's the main purpose of batch normalization?",
+            "options": [
+                "Faster learning",
+                "Reduce overfitting",
+                "Both a and b",
+                "Reduce gradient vanishing"
+            ],
+            "answer": "Both a and b",
+            "explanation": "Batch norm speeds up learning by normalizing activations and acts as regularizer."
+        },
+        {
+            "question": "For exponentially weighted averages, what's the approximate number of days a \u03b2 of 0.9\naverages over?",
+            "options": [
+                "5",
+                "10",
+                "15",
+                "20"
+            ],
+            "answer": "10",
+            "explanation": "1/(1-\u03b2) gives approximate window, so 1/(1-0.9) = 10 days."
+        },
+        {
+            "question": "What's the gradient checking formula for a small \u03b5?",
+            "options": [
+                "[f(\u03b8+\u03b5) - f(\u03b8-\u03b5)]/2\u03b5",
+                "[f(\u03b8+\u03b5) - f(\u03b8)]/\u03b5",
+                "[f(\u03b8) - f(\u03b8-\u03b5)]/\u03b5",
+                "[f(\u03b8+\u03b5) + f(\u03b8-\u03b5)]/2\u03b5"
+            ],
+            "answer": "[f(\u03b8+\u03b5) - f(\u03b8-\u03b5)]/2\u03b5",
+            "explanation": "Two-sided difference gives better numerical approximation of gradient."
+        },
+        {
+            "question": "In mini-batch gradient descent, as batch size increases:",
+            "options": [
+                "Training becomes faster, less noisy",
+                "Training becomes slower, less noisy",
+                "Training becomes faster, more noisy",
+                "Training becomes slower, more noisy"
+            ],
+            "answer": "Training becomes slower, less noisy",
+            "explanation": "Larger batches give more stable updates but require more computation per step."
+        },
+        {
+            "question": "For softmax classifier output layer with n classes:",
+            "options": [
+                "Use n-1 neurons",
+                "Use n neurons",
+                "Use log(n) neurons",
+                "Use 2n neurons"
+            ],
+            "answer": "Use n neurons",
+            "explanation": "Need n outputs for n class probabilities, summing to 1."
+        },
+        {
+            "question": "What problem does learning rate decay solve?",
+            "options": [
+                "Vanishing gradients",
+                "Exploding gradients",
+                "Final parameter oscillation",
+                "Initial slow learning"
+            ],
+            "answer": "Final parameter oscillation",
+            "explanation": "Reducing learning rate over time helps converge to minimum without oscillations."
+        },
+        {
+            "question": "When using RMSprop, which quantity is divided by square root of running average?",
+            "options": [
+                "Weights",
+                "Gradients",
+                "Learning rate",
+                "Momentum"
+            ],
+            "answer": "Gradients",
+            "explanation": "RMSprop divides gradients by sqrt(running average of squared gradients)."
+        },
+        {
+            "question": "Which initialization is preferred for ReLU networks?",
+            "options": [
+                "Zero initialization",
+                "Random normal",
+                "He initialization",
+                "Xavier initialization"
+            ],
+            "answer": "He initialization",
+            "explanation": "He initialization accounts for ReLU's property of setting negative values to zero."
+        },
+        {
+            "question": "During batch norm at test time:",
+            "options": [
+                "Compute mean/variance from test batch",
+                "Use running averages from training",
+                "Don't normalize",
+                "Use last batch statistics"
+            ],
+            "answer": "Use running averages from training",
+            "explanation": "Test time uses population statistics computed during training."
+        },
+        {
+            "question": "What's the main benefit of TensorFlow's eager execution?",
+            "options": [
+                "Faster computation",
+                "Less memory usage",
+                "Easier debugging",
+                "Better optimization"
+            ],
+            "answer": "Easier debugging",
+            "explanation": "Eager execution allows immediate evaluation and easier debugging of operations."
+        },
+        {
+            "question": "For which of these would you NOT use early stopping?",
+            "options": [
+                "Neural network training",
+                "Hyperparameter search",
+                "Regularization",
+                "Mini-batch selection"
+            ],
+            "answer": "Mini-batch selection",
+            "explanation": "Early stopping is for preventing overfitting in training, not for batch selection."
+        },
+        {
+            "question": "In momentum update, v = \u03b2v + (1-\u03b2)\u03b8, what's typically good \u03b2 value?",
+            "options": [
+                "0.1",
+                "0.5",
+                "0.9",
+                "0.99"
+            ],
+            "answer": "0.9",
+            "explanation": "\u03b2 \u2248 0.9 typically provides good momentum without too much delay."
+        },
+        {
+            "question": "What's the main advantage of random hyperparameter search over grid search?",
+            "options": [
+                "Faster convergence",
+                "Better coverage of space",
+                "Easier implementation",
+                "Lower memory usage"
+            ],
+            "answer": "Better coverage of space",
+            "explanation": "Random search more efficiently explores high-dimensional hyperparameter spaces."
+        },
+        {
+            "question": "For a train/dev/test split, which is typically largest?",
+            "options": [
+                "Train",
+                "Dev",
+                "Test",
+                "All equal"
+            ],
+            "answer": "Train",
+            "explanation": "Training set typically largest to learn patterns, dev/test for validation/evaluation."
+        },
+        {
+            "question": "What's the primary purpose of gradient checking?",
+            "options": [
+                "Speed up training",
+                "Debug implementation",
+                "Reduce overfitting",
+                "Improve accuracy"
+            ],
+            "answer": "Debug implementation",
+            "explanation": "Gradient checking helps verify backpropagation implementation correctness."
+        },
+        {
+            "question": "In batch norm, \u03b3 and \u03b2 are:",
+            "options": [
+                "Hyperparameters",
+                "Learnable parameters",
+                "Fixed constants",
+                "Random variables"
+            ],
+            "answer": "Learnable parameters",
+            "explanation": "\u03b3 (scale) and \u03b2 (shift) are learned during training to allow representation flexibility."
+        },
+        {
+            "question": "Which regularization technique is computationally least expensive?",
+            "options": [
+                "L2 regularization",
+                "Dropout",
+                "Data augmentation",
+                "Early stopping"
+            ],
+            "answer": "L2 regularization",
+            "explanation": "L2 regularization just adds simple term to cost function, minimal computational\noverhead."
+        },
+        {
+            "question": "When handling missing values, which is generally NOT recommended?",
+            "options": [
+                "Mean imputation",
+                "Median imputation",
+                "Deletion of rows",
+                "Replacing with zeros"
+            ],
+            "answer": "Replacing with zeros",
+            "explanation": "Replacing with zeros can significantly distort data distributions and relationships,\nunlike other methods that preserve statistical properties."
+        },
+        {
+            "question": "What does a box plot's whiskers typically represent?",
+            "options": [
+                "Mean \u00b1 1 standard deviation",
+                "1.5 \u00d7 IQR from quartiles",
+                "Minimum and maximum values",
+                "95% confidence interval"
+            ],
+            "answer": "1.5 \u00d7 IQR from quartiles",
+            "explanation": "Box plot whiskers extend to 1.5 times the interquartile range from Q1 and Q3,\nbeyond which points are considered outliers."
+        },
+        {
+            "question": "In feature scaling, when should you use Min-Max vs. Standard scaling?",
+            "options": [
+                "Min-Max for neural networks, Standard for linear regression",
+                "Min-Max for linear regression, Standard for neural networks",
+                "Either can be used interchangeably",
+                "Depends on outliers presence"
+            ],
+            "answer": "Min-Max for neural networks, Standard for linear regression",
+            "explanation": "Min-Max scaling (to [0,1]) works better for neural networks, while standardization\nis preferred for linear methods."
+        },
+        {
+            "question": "What transformation would you apply to make right-skewed data more normal?",
+            "options": [
+                "Square",
+                "Square root",
+                "Log",
+                "Exponential"
+            ],
+            "answer": "Log",
+            "explanation": "Log transformation compresses high values and expands low values, helping\nnormalize right-skewed distributions."
+        },
+        {
+            "question": "What's the Type I error rate (\u03b1) relationship with p-value?",
+            "options": [
+                "Reject H\u2080 if p-value > \u03b1",
+                "Reject H\u2080 if p-value < \u03b1",
+                "Accept H\u2080 if p-value = \u03b1",
+                "No relationship"
+            ],
+            "answer": "Reject H\u2080 if p-value < \u03b1",
+            "explanation": "We reject null hypothesis when p-value is less than significance level \u03b1."
+        },
+        {
+            "question": "Which encoding method creates the least number of new features for categorical variables?",
+            "options": [
+                "One-hot encoding",
+                "Label encoding",
+                "Dummy encoding",
+                "Binary encoding"
+            ],
+            "answer": "Label encoding",
+            "explanation": "Label encoding converts categories to single integer column, while others create\nmultiple columns."
+        },
+        {
+            "question": "For API data retrieval, what's the primary advantage of pagination?",
+            "options": [
+                "Faster processing",
+                "Memory efficiency",
+                "Better data quality",
+                "Simpler code"
+            ],
+            "answer": "Memory efficiency",
+            "explanation": "Pagination retrieves data in chunks, preventing memory overload with large\ndatasets."
+        },
+        {
+            "question": "In Bayesian vs. Frequentist inference, which uses prior probabilities?",
+            "options": [
+                "Frequentist only",
+                "Bayesian only",
+                "Both",
+                "Neither"
+            ],
+            "answer": "Bayesian only",
+            "explanation": "Bayesian inference incorporates prior beliefs/probabilities, while Frequentist\ndoesn't."
+        },
+        {
+            "question": "What's the relationship between confidence level and margin of error?",
+            "options": [
+                "Inverse relationship",
+                "Direct relationship",
+                "No relationship",
+                "Depends on sample size"
+            ],
+            "answer": "Direct relationship",
+            "explanation": "Higher confidence level requires larger margin of error, assuming other factors\nconstant."
+        },
+        {
+            "question": "When should you use a non-parametric test?",
+            "options": [
+                "Large sample size only",
+                "Normal distribution only",
+                "Non-normal distribution",
+                "Small sample size only"
+            ],
+            "answer": "Non-normal distribution",
+            "explanation": "Non-parametric tests are appropriate when data doesn't meet normality\nassumptions."
+        },
+        {
+            "question": "What determines outlier status in IQR method?",
+            "options": [
+                "> 2 standard deviations",
+                "> 3 standard deviations",
+                "> 1.5 \u00d7 IQR from quartiles",
+                "> 2.5 \u00d7 IQR from quartiles"
+            ],
+            "answer": "> 1.5 \u00d7 IQR from quartiles",
+            "explanation": "Points beyond 1.5 times IQR above Q3 or below Q1 are considered outliers."
+        },
+        {
+            "question": "For highly correlated features, what's best practice?",
+            "options": [
+                "Keep all features",
+                "Remove randomly",
+                "Create interaction terms",
+                "Remove one or combine"
+            ],
+            "answer": "Remove one or combine",
+            "explanation": "Highly correlated features can cause multicollinearity; best to remove one or\ncombine them."
+        },
+        {
+            "question": "What's the main purpose of exploratory data analysis (EDA)?",
+            "options": [
+                "Clean data",
+                "Build models",
+                "Understand patterns",
+                "Feature selection"
+            ],
+            "answer": "Understand patterns",
+            "explanation": "EDA helps understand data patterns, relationships, and anomalies before formal\nanalysis."
+        },
+        {
+            "question": "Which SQL join preserves all records from both tables?",
+            "options": [
+                "INNER JOIN",
+                "LEFT JOIN",
+                "FULL OUTER JOIN",
+                "RIGHT JOIN"
+            ],
+            "answer": "FULL OUTER JOIN",
+            "explanation": "FULL OUTER JOIN keeps all records from both tables, filling with NULL where\nno match exists."
+        },
+        {
+            "question": "What's the benefit of feature scaling in gradient descent?",
+            "options": [
+                "Faster convergence",
+                "Better accuracy",
+                "Less overfitting",
+                "Simpler model"
+            ],
+            "answer": "Faster convergence",
+            "explanation": "Scaled features help gradient descent converge faster by creating more uniform\nfeature space."
+        },
+        {
+            "question": "For a two-tailed test with \u03b1=0.05, what's the critical value?",
+            "options": [
+                "1.64",
+                "1.96",
+                "2.33",
+                "2.58"
+            ],
+            "answer": "1.96",
+            "explanation": "Two-tailed test with 95% confidence uses \u00b11.96 standard deviations from mean."
+        },
+        {
+            "question": "What's the drawback of using mean imputation?",
+            "options": [
+                "Increases variance",
+                "Reduces variance",
+                "Changes median",
+                "Increases bias"
+            ],
+            "answer": "Reduces variance",
+            "explanation": "Mean imputation artificially reduces variance by adding duplicate values."
+        },
+        {
+            "question": "Which test compares variances of two populations?",
+            "options": [
+                "t-test",
+                "z-test",
+                "F-test",
+                "chi-square test"
+            ],
+            "answer": "F-test",
+            "explanation": "F-test specifically compares variances of two populations."
+        },
+        {
+            "question": "What's the primary purpose of log transformation?",
+            "options": [
+                "Normalize data",
+                "Remove outliers",
+                "Scale data",
+                "Create linearity"
+            ],
+            "answer": "Create linearity",
+            "explanation": "Log transformation often helps create linear relationships from exponential ones."
+        },
+        {
+            "question": "In hypothesis testing, what happens as sample size increases?",
+            "options": [
+                "Power decreases",
+                "Power increases",
+                "\u03b1 increases",
+                "\u03b2 increases"
+            ],
+            "answer": "Power increases",
+            "explanation": "Larger sample size increases test power (ability to detect true effects)."
+        },
+        {
+            "question": "In polynomial regression, if you keep increasing the degree, what typically happens to the\nbias-variance tradeoff?",
+            "options": [
+                "Bias\u2193, Variance\u2193",
+                "Bias\u2193, Variance\u2191",
+                "Bias\u2191, Variance\u2193",
+                "Bias\u2191, Variance\u2191"
+            ],
+            "answer": "Bias\u2193, Variance\u2191",
+            "explanation": "Higher degree polynomials reduce bias by fitting training data better but increase\nvariance (overfitting risk)."
+        },
+        {
+            "question": "What's the main difference between Lasso and Ridge regression?",
+            "options": [
+                "Lasso uses L1, Ridge uses L2 regularization",
+                "Lasso is for classification only",
+                "Ridge performs feature selection",
+                "Ridge is always better"
+            ],
+            "answer": "Lasso uses L1, Ridge uses L2 regularization",
+            "explanation": "Lasso uses absolute value (L1) penalty leading to feature selection, Ridge uses\nsquared (L2) penalty."
+        },
+        {
+            "question": "In k-fold cross-validation, what happens as k increases?",
+            "options": [
+                "More computationally expensive, less bias",
+                "Less computationally expensive, more bias",
+                "No effect on computation or bias",
+                "More computationally expensive, more bias"
+            ],
+            "answer": "More computationally expensive, less bias",
+            "explanation": "Larger k means more training iterations but uses more data for training, reducing\nbias."
+        },
+        {
+            "question": "What's the elastic net mixing parameter \u03b1=0 equivalent to?",
+            "options": [
+                "Lasso regression",
+                "Ridge regression",
+                "Linear regression",
+                "Polynomial regression"
+            ],
+            "answer": "Ridge regression",
+            "explanation": "When \u03b1=0, elastic net becomes pure Ridge regression (L2 regularization)."
+        },
+        {
+            "question": "When is the training error typically lower than test error?",
+            "options": [
+                "Always",
+                "Never",
+                "Only with regularization",
+                "Only without regularization"
+            ],
+            "answer": "Always",
+            "explanation": "Model sees training data during fitting, so typically performs better on it than\nunseen test data."
+        },
+        {
+            "question": "What's the best way to handle multicollinearity?",
+            "options": [
+                "Increase model complexity",
+                "Add regularization",
+                "Reduce sample size",
+                "Ignore it"
+            ],
+            "answer": "Add regularization",
+            "explanation": "Regularization helps manage multicollinearity by constraining coefficient sizes."
+        },
+        {
+            "question": "If your linear regression has R\u00b2 = 1.0, what does it indicate?",
+            "options": [
+                "Perfect model",
+                "Overfitting",
+                "Underfitting",
+                "Could be either a or b"
+            ],
+            "answer": "Could be either a or b",
+            "explanation": "R\u00b2=1 could mean perfect fit or overfitting; need validation data to determine which."
+        },
+        {
+            "question": "When should you use Leave-One-Out Cross-Validation?",
+            "options": [
+                "Large datasets only",
+                "Small datasets",
+                "Never",
+                "Always"
+            ],
+            "answer": "Small datasets",
+            "explanation": "LOOCV is computationally expensive but makes best use of limited data in small\ndatasets."
+        },
+        {
+            "question": "What happens to coefficient values as Ridge lambda increases?",
+            "options": [
+                "Approach zero",
+                "Approach infinity",
+                "Stay the same",
+                "Become exactly zero"
+            ],
+            "answer": "Approach zero",
+            "explanation": "Ridge regression shrinks coefficients towards zero as regularization strength\nincreases."
+        },
+        {
+            "question": "In supervised learning, what's the key difference between regression and classification?",
+            "options": [
+                "Data size requirements",
+                "Feature types allowed",
+                "Output variable type",
+                "Processing speed"
+            ],
+            "answer": "Output variable type",
+            "explanation": "Regression predicts continuous values, classification predicts discrete categories."
+        },
+        {
+            "question": "What's the main advantage of Elastic Net over Lasso?",
+            "options": [
+                "Always more accurate",
+                "Handles correlated features better",
+                "Faster computation",
+                "No advantages"
+            ],
+            "answer": "Handles correlated features better",
+            "explanation": "Elastic Net combines L1 and L2 penalties, better handling groups of correlated\nfeatures."
+        },
+        {
+            "question": "What's the primary purpose of train-test split?",
+            "options": [
+                "Speed up training",
+                "Reduce overfitting",
+                "Estimate generalization error",
+                "Improve accuracy"
+            ],
+            "answer": "Estimate generalization error",
+            "explanation": "Test set provides unbiased estimate of model performance on unseen data."
+        },
+        {
+            "question": "When does polynomial regression become linear regression?",
+            "options": [
+                "Never",
+                "When degree = 0",
+                "When degree = 1",
+                "When degree = 2"
+            ],
+            "answer": "When degree = 1",
+            "explanation": "First-degree polynomial is equivalent to linear regression."
+        },
+        {
+            "question": "Which metric is NOT suitable for regression evaluation?",
+            "options": [
+                "MSE",
+                "R-squared",
+                "Accuracy",
+                "MAE"
+            ],
+            "answer": "Accuracy",
+            "explanation": "Accuracy is for classification; regression uses continuous error metrics like MSE."
+        },
+        {
+            "question": "What's the optimal number of features in polynomial regression?",
+            "options": [
+                "As many as possible",
+                "Depends on data",
+                "Always use degree 2",
+                "Always use degree 3"
+            ],
+            "answer": "Depends on data",
+            "explanation": "Optimal degree depends on underlying data pattern and complexity."
+        },
+        {
+            "question": "For standardized features, what typically happens in Ridge regression?",
+            "options": [
+                "All coefficients equal",
+                "Coefficients proportional to importance",
+                "Random coefficients",
+                "Zero coefficients"
+            ],
+            "answer": "Coefficients proportional to importance",
+            "explanation": "With standardized features, coefficient magnitudes reflect feature importance."
+        },
+        {
+            "question": "What's the relationship between bias and model complexity?",
+            "options": [
+                "Direct relationship",
+                "Inverse relationship",
+                "No relationship",
+                "Random relationship"
+            ],
+            "answer": "Inverse relationship",
+            "explanation": "As model complexity increases, bias typically decreases (but variance increases)."
+        },
+        {
+            "question": "When should you NOT use cross-validation?",
+            "options": [
+                "Small datasets",
+                "Time series data",
+                "Large datasets",
+                "Noisy data"
+            ],
+            "answer": "Time series data",
+            "explanation": "Regular cross-validation breaks temporal dependencies in time series data."
+        },
+        {
+            "question": "What's the primary difference between training error and test error?",
+            "options": [
+                "No difference",
+                "Test error is optimistic",
+                "Training error is optimistic",
+                "Can't compare them"
+            ],
+            "answer": "Training error is optimistic",
+            "explanation": "Training error typically underestimates true error due to fitting to training data."
+        },
+        {
+            "question": "What's the main benefit of standardizing features before regularization?",
+            "options": [
+                "Faster computation",
+                "Better interpretation",
+                "Equal penalty impact",
+                "No benefit"
+            ],
+            "answer": "Equal penalty impact",
+            "explanation": "Standardization ensures regularization affects all features equally, regardless of\nscale."
+        },
+        {
+            "question": "What is the output of \"Hello\" * 3?",
+            "options": [
+                "\"HelloHelloHello\"",
+                "Error",
+                "\"Hello3\"",
+                "[\"Hello\", \"Hello\", \"Hello\"]"
+            ],
+            "answer": "\"HelloHelloHello\"",
+            "explanation": "String repetition operator * repeats the string the specified number of times."
+        },
+        {
+            "question": "Which method correctly creates a turtle object?",
+            "options": [
+                "turtle.new()",
+                "turtle.Turtle()",
+                "turtle.create()",
+                "new turtle()"
+            ],
+            "answer": "turtle.Turtle()",
+            "explanation": "Turtle() is the constructor method to create new turtle object."
+        },
+        {
+            "question": "What happens when using slice with step -1: \"Python\"[::-1]?",
+            "options": [
+                "Returns empty string",
+                "Reverses the string",
+                "Removes last character",
+                "Error"
+            ],
+            "answer": "Reverses the string",
+            "explanation": "Step -1 traverses string from end to beginning, creating reverse."
+        },
+        {
+            "question": "What's the output of this boolean expression: True and False or True?",
+            "options": [
+                "False",
+                "True",
+                "Error",
+                "None"
+            ],
+            "answer": "True",
+            "explanation": "'and' has higher precedence: (True and False) = False, then False or True = True."
+        },
+        {
+            "question": "When using .format(), what prints x with 2 decimal places?",
+            "options": [
+                "\"{x:.2f}\"",
+                "\"{x:2f}\"",
+                "\"{x:2}\"",
+                "\"{x.2}\""
+            ],
+            "answer": "\"{x:.2f}\"",
+            "explanation": ".2f specifies 2 decimal places for float formatting."
+        },
+        {
+            "question": "Which creates list of values 2,4,6,8?",
+            "options": [
+                "range(2,8,2)",
+                "range(2,10,2)",
+                "range(2,8)",
+                "list(2,8,2)"
+            ],
+            "answer": "range(2,10,2)",
+            "explanation": "range(start,stop,step) needs stop value of 10 to include 8."
+        },
+        {
+            "question": "How do you safely modify a list while iterating?",
+            "options": [
+                "Use while loop",
+                "Create copy first",
+                "Use enumerate",
+                "Use for loop"
+            ],
+            "answer": "Create copy first",
+            "explanation": "Modifying while iterating can cause unexpected behavior; iterate over copy."
+        },
+        {
+            "question": "What's result of list(\"Hello\")?",
+            "options": [
+                "[\"Hello\"]",
+                "['H','e','l','l','o']",
+                "Error",
+                "\"Hello\""
+            ],
+            "answer": "['H','e','l','l','o']",
+            "explanation": "list() converts string to list of individual characters."
+        },
+        {
+            "question": "In turtle graphics, what creates a triangle?\nfor _ in range(3):\nt.forward(100)\n\nt.right(?)",
+            "options": [
+                "60",
+                "90",
+                "120",
+                "180"
+            ],
+            "answer": "120",
+            "explanation": "External angles of triangle are 360/3 = 120 degrees."
+        },
+        {
+            "question": "What's output of \",\".join(['a', 'b', 'c'])?",
+            "options": [
+                "['a','b','c']",
+                "'abc'",
+                "'a,b,c'",
+                "Error"
+            ],
+            "answer": "'a,b,c'",
+            "explanation": "join() combines list elements with specified separator."
+        },
+        {
+            "question": "What's the type of 5/2?",
+            "options": [
+                "int",
+                "float",
+                "number",
+                "double"
+            ],
+            "answer": "float",
+            "explanation": "Division operator / always returns float in Python 3."
+        },
+        {
+            "question": "How to check if all elements in list are True?",
+            "options": [
+                "any(list1)",
+                "all(list1)",
+                "truth(list1)",
+                "check(list1)"
+            ],
+            "answer": "all(list1)",
+            "explanation": "all() returns True if all elements are truthy."
+        },
+        {
+            "question": "What happens in this code?\nx = [1,2,3]\ny = x\nx = [4,5,6]\nprint(y)",
+            "options": [
+                "[4,5,6]",
+                "[1,2,3]",
+                "None",
+                "Error"
+            ],
+            "answer": "[1,2,3]",
+            "explanation": "Reassignment of x doesn't affect y's reference to original list."
+        },
+        {
+            "question": "Which is mutable?",
+            "options": [
+                "String",
+                "Tuple",
+                "List",
+                "Int"
+            ],
+            "answer": "List",
+            "explanation": "Lists can be modified after creation, others are immutable."
+        },
+        {
+            "question": "What's correct way to read user input?",
+            "options": [
+                "input()",
+                "read()",
+                "get()",
+                "scan()"
+            ],
+            "answer": "input()",
+            "explanation": "input() reads user input as string from console."
+        },
+        {
+            "question": "What's output of 2 ** 3?",
+            "options": [
+                "6",
+                "8",
+                "5",
+                "Error"
+            ],
+            "answer": "8",
+            "explanation": "** operator performs exponentiation (2\u00b3 = 8)."
+        },
+        {
+            "question": "What does len() return for empty list?",
+            "options": [
+                "0",
+                "None",
+                "Error",
+                "False"
+            ],
+            "answer": "0",
+            "explanation": "len() returns 0 for empty sequences."
+        },
+        {
+            "question": "Which creates deep copy of list?",
+            "options": [
+                "list2 = list1",
+                "list2 = list1[:]",
+                "import copy; list2 = copy.deepcopy(list1)",
+                "list2 = list1.copy()"
+            ],
+            "answer": "import copy; list2 = copy.deepcopy(list1)",
+            "explanation": "deepcopy() creates copy of list and all nested objects."
+        },
+        {
+            "question": "What's output of \"python\".capitalize()?",
+            "options": [
+                "\"PYTHON\"",
+                "\"Python\"",
+                "\"python\"",
+                "Error"
+            ],
+            "answer": "\"Python\"",
+            "explanation": "capitalize() converts first character to uppercase."
+        },
+        {
+            "question": "Which is valid comparison?",
+            "options": [
+                "1 < 2 < 3",
+                "(1 < 2) < 3",
+                "1 < (2 < 3)",
+                "All above"
+            ],
+            "answer": "1 < 2 < 3 Explanation: Python allows chained comparisons.",
+            "explanation": "Python allows chained comparisons."
+        },
+        {
+            "question": "How to convert string to int?",
+            "options": [
+                "int(str)",
+                "str.toInt()",
+                "convert(str)",
+                "makeInt(str)"
+            ],
+            "answer": "int(str)",
+            "explanation": "int() function converts string to integer if possible."
+        },
+        {
+            "question": "What's output of bool([])?",
+            "options": [
+                "True",
+                "False",
+                "None",
+                "Error"
+            ],
+            "answer": "False",
+            "explanation": "Empty sequences are considered falsy in Python."
+        },
+        {
+            "question": "What's correct way to import turtle?",
+            "options": [
+                "import turtle",
+                "from turtle import *",
+                "include turtle",
+                "Both a and b"
+            ],
+            "answer": "Both a and b",
+            "explanation": "Can import module or import specific names from module."
+        },
+        {
+            "question": "What's output of list(range(5))?",
+            "options": [
+                "[0,1,2,3,4]",
+                "[1,2,3,4,5]",
+                "[0,1,2,3,4,5]",
+                "Error"
+            ],
+            "answer": "[0,1,2,3,4]",
+            "explanation": "range(5) generates sequence from 0 to 4."
+        },
+        {
+            "question": "Which operator checks value and type?",
+            "options": [
+                "==",
+                "is",
+                "===",
+                "equals"
+            ],
+            "answer": "is",
+            "explanation": "'is' operator checks identity (value and type)."
+        },
+        {
+            "question": "What's output of max([1, 2, 3, -4, 5])?",
+            "options": [
+                "1",
+                "5",
+                "-4",
+                "Error"
+            ],
+            "answer": "5",
+            "explanation": "max() returns largest value in sequence."
+        },
+        {
+            "question": "How to check string contains only digits?",
+            "options": [
+                "str.isdigit()",
+                "str.isnumber()",
+                "str.isnum()",
+                "str.digits()"
+            ],
+            "answer": "str.isdigit()",
+            "explanation": "isdigit() checks if string contains only digit characters."
+        },
+        {
+            "question": "What happens in accumulator pattern with strings?",
+            "options": [
+                "Adds numbers",
+                "Builds string piece by piece",
+                "Counts characters",
+                "Removes characters"
+            ],
+            "answer": "Builds string piece by piece",
+            "explanation": "Accumulator pattern builds final result incrementally."
+        },
+        {
+            "question": "What's difference between break and continue?",
+            "options": [
+                "No difference",
+                "break exits loop, continue skips iteration",
+                "continue exits loop, break skips iteration",
+                "Both exit loop"
+            ],
+            "answer": "break exits loop, continue skips iteration",
+            "explanation": "break terminates loop, continue jumps to next iteration."
+        },
+        {
+            "question": "What's output of \"Hello\"[1:4:2]?",
+            "options": [
+                "\"el\"",
+                "\"elo\"",
+                "\"eh\"",
+                "\"lo\""
+            ],
+            "answer": "\"el\"",
+            "explanation": "Slice with step 2 takes every second character from index 1 to 3."
+        },
+        {
+            "question": "How to format float with 2 decimal places?",
+            "options": [
+                "\"{:.2f}\".format(num)",
+                "round(num, 2)",
+                "\"%.2f\" % num",
+                "All above"
+            ],
+            "answer": "All above",
+            "explanation": "Python provides multiple ways to format floating point numbers."
+        },
+        {
+            "question": "What's correct way to clear list?",
+            "options": [
+                "list = []",
+                "list.clear()",
+                "list.delete()",
+                "Both a and b"
+            ],
+            "answer": "Both a and b",
+            "explanation": "Can reassign empty list or use clear() method."
+        },
+        {
+            "question": "What's output of 3 * \"2\" + \"1\"?",
+            "options": [
+                "\"7\"",
+                "\"621\"",
+                "\"2221\"",
+                "Error"
+            ],
+            "answer": "\"2221\"",
+            "explanation": "String multiplication then concatenation."
+        },
+        {
+            "question": "How to check if substring exists?",
+            "options": [
+                "sub in string",
+                "string.contains(su",
+                "",
+                "string.has(su",
+                "",
+                "string.find(su",
+                ""
+            ],
+            "answer": "sub in string",
+            "explanation": "'in' operator checks for substring existence."
+        },
+        {
+            "question": "What's output of list(\"Hello\") + list(\"World\")?",
+            "options": [
+                "[\"Hello\", \"World\"]",
+                "[\"H\",\"e\",\"l\",\"l\",\"o\",\"W\",\"o\",\"r\",\"l\",\"d\"]",
+                "\"HelloWorld\"",
+                "Error"
+            ],
+            "answer": "[\"H\",\"e\",\"l\",\"l\",\"o\",\"W\",\"o\",\"r\",\"l\",\"d\"]",
+            "explanation": "Concatenates two lists of characters."
+        },
+        {
+            "question": "Which is valid tuple?",
+            "options": [
+                "(1)",
+                "(1,)",
+                "[1]",
+                "{1}"
+            ],
+            "answer": "(1,)",
+            "explanation": "Single-element tuple requires trailing comma."
+        },
+        {
+            "question": "What's output of \" \".join(\"Python\")?",
+            "options": [
+                "\"Python\"",
+                "\"P y t h o n\"",
+                "\"P-y-t-h-o-n\"",
+                "Error"
+            ],
+            "answer": "\"P y t h o n\"",
+            "explanation": "Joins characters with space between them."
+        },
+        {
+            "question": "Which is correct file open mode?",
+            "options": [
+                "\"rw\"",
+                "\"r+\"",
+                "\"read\"",
+                "\"write\""
+            ],
+            "answer": "\"r+\"",
+            "explanation": "\"r+\" opens file for reading and writing."
+        },
+        {
+            "question": "What's result of bool(0.0)?",
+            "options": [
+                "True",
+                "False",
+                "None",
+                "Error"
+            ],
+            "answer": "False",
+            "explanation": "Zero values (including 0.0) are considered falsy."
+        },
+        {
+            "question": "How to get last element of list?",
+            "options": [
+                "list[-1]",
+                "list.last()",
+                "list.end()",
+                "list[len(list)]"
+            ],
+            "answer": "list[-1]",
+            "explanation": "Negative indexing accesses elements from end of list."
+        },
+        {
+            "question": "What's the safest way to open and close a file?",
+            "options": [
+                "file = open(); file.close()",
+                "with open() as file:",
+                "try: open()",
+                "auto_close(open())"
+            ],
+            "answer": "with open() as file:",
+            "explanation": "'with' statement ensures file closes properly even if errors occur."
+        },
+        {
+            "question": "When using CSV writer, what's the correct way to write a row?",
+            "options": [
+                "writer.write()",
+                "writer.writerow()",
+                "writer.add()",
+                "writer.insert()"
+            ],
+            "answer": "writer.writerow()",
+            "explanation": "writerow() is CSV writer's method for writing single row of data."
+        },
+        {
+            "question": "In dictionary operations, what happens if key doesn't exist?\nd = {'a': 1}\nprint(d.get('b', 0))",
+            "options": [
+                "KeyError",
+                "None",
+                "0",
+                "False"
+            ],
+            "answer": "0",
+            "explanation": "get() method returns second argument as default if key not found."
+        },
+        {
+            "question": "What's correct way to unpack tuple?\nt = (1, 2, 3)",
+            "options": [
+                "x, y, z = t",
+                "x = t[0]; y = t[1]; z = t[2]",
+                "unpack(t)",
+                "Both a and b"
+            ],
+            "answer": "Both a and b",
+            "explanation": "Can unpack directly or access individual elements."
+        },
+        {
+            "question": "Which lambda expression sorts list by second element?",
+            "options": [
+                "lambda x: x[1]",
+                "lambda x: x[0]",
+                "lambda: x[1]",
+                "lambda x, y: x[1]"
+            ],
+            "answer": "lambda x: x[1]",
+            "explanation": "Returns second element (index 1) as sorting key."
+        },
+        {
+            "question": "How do you read all lines from file at once?",
+            "options": [
+                "file.read()",
+                "file.readlines()",
+                "file.readall()",
+                "Both a and b"
+            ],
+            "answer": "Both a and b",
+            "explanation": "read() returns single string, readlines() returns list of lines."
+        },
+        {
+            "question": "What's difference between sort() and sorted()?",
+            "options": [
+                "No difference",
+                "sort() modifies list, sorted() returns new list",
+                "sorted() modifies list, sort() returns new list",
+                "sort() is faster"
+            ],
+            "answer": "sort() modifies list, sorted() returns new list",
+            "explanation": "sort() is in-place, sorted() creates new sorted copy."
+        },
+        {
+            "question": "What happens when using dict.update()?\nd1 = {'a': 1}\nd2 = {'a': 2, 'b': 3}\nd1.update(d2)",
+            "options": [
+                "{'a': 1, 'b': 3}",
+                "{'a': 2, 'b': 3}",
+                "{'a': [1,2], 'b': 3}",
+                "Error"
+            ],
+            "answer": "{'a': 2, 'b': 3}",
+            "explanation": "update() overwrites existing keys with new values."
+        },
+        {
+            "question": "Which creates optional parameter with default value?\ndef func(x, ?):",
+            "options": [
+                "y = None",
+                "y: None",
+                "y = 0",
+                "default y = 0"
+            ],
+            "answer": "y = 0",
+            "explanation": "Parameters with default values become optional."
+        },
+        {
+            "question": "What's output of this dictionary comprehension?\n{x: x**2 for x in range(3)}",
+            "options": [
+                "{0: 0, 1: 1, 2: 4}",
+                "[0, 1, 4]",
+                "{0, 1, 4}",
+                "Error"
+            ],
+            "answer": "{0: 0, 1: 1, 2: 4}",
+            "explanation": "Creates dictionary with numbers as keys and their squares as values."
+        },
+        {
+            "question": "How to read CSV with headers as dictionary?",
+            "options": [
+                "csv.reader()",
+                "csv.DictReader()",
+                "csv.readdict()",
+                "csv.headers()"
+            ],
+            "answer": "csv.DictReader()",
+            "explanation": "DictReader uses first row as keys for dictionary."
+        },
+        {
+            "question": "What's scope of variable defined in function?",
+            "options": [
+                "Global",
+                "Local to function",
+                "Local to module",
+                "Depends on value"
+            ],
+            "answer": "Local to function",
+            "explanation": "Variables defined inside function have local scope."
+        },
+        {
+            "question": "Which is valid tuple unpacking?",
+            "options": [
+                "a, b = 1, 2",
+                "(a,",
+                "= 1, 2",
+                "a, b = (1, 2)",
+                "All above"
+            ],
+            "answer": "All above",
+            "explanation": "Python supports multiple tuple unpacking syntax."
+        },
+        {
+            "question": "What happens in dictionary accumulation?\nd = {}\nfor x in [1,2,1,3]:\nd[x] = d.get(x, 0) + 1",
+            "options": [
+                "Counts occurrences",
+                "Sums values",
+                "Lists values",
+                "Error"
+            ],
+            "answer": "Counts occurrences",
+            "explanation": "Creates frequency counter for each value."
+        },
+        {
+            "question": "When using lambda with sort, what's correct?\nsorted(lst, key=?)",
+            "options": [
+                "lambda: x",
+                "lambda x: x",
+                "lambda x, y: x",
+                "def key(x): return x"
+            ],
+            "answer": "lambda x: x",
+            "explanation": "Lambda takes single parameter for each element."
+        },
+        {
+            "question": "What's correct way to write multiple rows to CSV?",
+            "options": [
+                "writer.writerows()",
+                "writer.writelines()",
+                "writer.writeall()",
+                "writer.write()"
+            ],
+            "answer": "writer.writerows() Explanation: writerows() writes multiple rows at once.",
+            "explanation": "writerows() writes multiple rows at once."
+        },
+        {
+            "question": "How to get all keys from dictionary?",
+            "options": [
+                "dict.keys()",
+                "dict.getkeys()",
+                "dict.allkeys()",
+                "keys(dict)"
+            ],
+            "answer": "dict.keys()",
+            "explanation": "keys() method returns view of dictionary keys."
+        },
+        {
+            "question": "What's output of global variable modification?\nx = 1\ndef func():\nglobal x\nx = 2\nfunc()\nprint(x)",
+            "options": [
+                "1",
+                "2",
+                "None",
+                "Error"
+            ],
+            "answer": "2",
+            "explanation": "global keyword allows function to modify global variable."
+        },
+        {
+            "question": "Which sorting is stable?",
+            "options": [
+                "sort()",
+                "sorted()",
+                "Both",
+                "Neither"
+            ],
+            "answer": "Both",
+            "explanation": "Python's sorting methods preserve relative order of equal elements."
+        },
+        {
+            "question": "What's difference between readline() and readlines()?",
+            "options": [
+                "No difference",
+                "readline() reads one line, readlines() reads all",
+                "readline() is faster",
+                "readlines() is for files only"
+            ],
+            "answer": "readline() reads one line, readlines() reads all",
+            "explanation": "readline() returns single line, readlines() returns list of all lines."
+        },
+        {
+            "question": "What happens when sorting dictionary by value?\nsorted(d.items(), key=lambda x: x[1])",
+            "options": [
+                "Returns sorted keys",
+                "Returns sorted values",
+                "Returns sorted (key,value) pairs",
+                "Error"
+            ],
+            "answer": "Returns sorted (key,value) pairs",
+            "explanation": "Sorts tuples of (key,value) pairs based on values."
+        },
+        {
+            "question": "How to check if key exists in dictionary?",
+            "options": [
+                "key in dict",
+                "dict.has_key()",
+                "dict.contains(key)",
+                "dict.exists(key)"
+            ],
+            "answer": "key in dict",
+            "explanation": "'in' operator checks for key existence."
+        },
+        {
+            "question": "What's effect of *args in function?",
+            "options": [
+                "Makes all parameters optional",
+                "Collects extra positional arguments",
+                "Requires all arguments",
+                "Creates global variables"
+            ],
+            "answer": "Collects extra positional arguments",
+            "explanation": "*args packs additional positional arguments into tuple."
+        },
+        {
+            "question": "How to read file line by line efficiently?",
+            "options": [
+                "while True: readline()",
+                "readlines()",
+                "for line in file:",
+                "read().split('\\n')"
+            ],
+            "answer": "for line in file:",
+            "explanation": "File iteration is memory efficient for large files."
+        },
+        {
+            "question": "What's purpose of dict.setdefault()?",
+            "options": [
+                "Sets default value for all keys",
+                "Returns value if key exists, else sets default",
+                "Creates new dictionary with defaults",
+                "Removes default values"
+            ],
+            "answer": "Returns value if key exists, else sets default",
+            "explanation": "setdefault() retrieves value or sets/returns default if key missing."
+        },
+        {
+            "question": "What's the correct way to access value 'cat' in this nested dictionary?\ndata = {'pets': {'animal': {'type': 'cat'}}}",
+            "options": [
+                "data['pets']['animal']['type']",
+                "data.pets.animal.type",
+                "data['pets.animal.type']",
+                "data.get('pets')('animal')('type')"
+            ],
+            "answer": "data['pets']['animal']['type']",
+            "explanation": "Nested dictionaries are accessed using chained square bracket notation."
+        },
+        {
+            "question": "What's the output of nested list comprehension?\n[[x+y for x in range(2)] for y in range(3)]",
+            "options": [
+                "[[0,1], [1,2], [2,3]]",
+                "[0,1,1,2,2,3]",
+                "[[0,1,2], [0,1,2]]",
+                "[0,1,2,3]"
+            ],
+            "answer": "[[0,1], [1,2], [2,3]]",
+            "explanation": "Outer loop controls rows, inner loop adds values to each row."
+        },
+        {
+            "question": "How do you convert Python object to JSON string?",
+            "options": [
+                "json.dumps(obj)",
+                "json.loads(obj)",
+                "json.stringify(obj)",
+                "json.parse(obj)"
+            ],
+            "answer": "json.dumps(obj)",
+            "explanation": "dumps() serializes Python object to JSON string."
+        },
+        {
+            "question": "What's difference between shallow and deep copy?",
+            "options": [
+                "No difference",
+                "Shallow copies only first level",
+                "Deep copy is faster",
+                "Shallow copy is recursive"
+            ],
+            "answer": "Shallow copies only first level",
+            "explanation": "Shallow copy creates references for nested objects, deep copy duplicates\neverything."
+        },
+        {
+            "question": "What does map(str, [1,2,3]) return?",
+            "options": [
+                "['1','2','3']",
+                "[1,2,3]",
+                "Map object",
+                "Error"
+            ],
+            "answer": "Map object",
+            "explanation": "map() returns map object that needs to be converted to list/tuple."
+        },
+        {
+            "question": "What's correct HTTP method for retrieving data?",
+            "options": [
+                "POST",
+                "GET",
+                "PUT",
+                "DELETE"
+            ],
+            "answer": "GET",
+            "explanation": "GET is standard method for requesting data from server."
+        },
+        {
+            "question": "Which is valid query parameter format?",
+            "options": [
+                "url?key=value",
+                "url/key=value",
+                "url?key:value",
+                "url/key:value"
+            ],
+            "answer": "url?key=value",
+            "explanation": "Query parameters use ? followed by key=value pairs."
+        },
+        {
+            "question": "How do you combine two lists using zip?\na = [1,2,3]\nb = ['x','y','z']",
+            "options": [
+                "zip(a,",
+                "",
+                "a.zip(",
+                "",
+                "combine(a,",
+                "",
+                "merge(a,",
+                "",
+                "zip(a,"
+            ],
+            "answer": "zip(a,b)",
+            "explanation": "zip() creates pairs from multiple iterables."
+        },
+        {
+            "question": "What's output of filter(lambda x: x>0, [-1,0,1,2])?",
+            "options": [
+                "[1,2]",
+                "[-1,0]",
+                "Filter object",
+                "Error"
+            ],
+            "answer": "Filter object",
+            "explanation": "filter() returns filter object containing values meeting condition."
+        },
+        {
+            "question": "In REST API URL, what's correct path parameter format?",
+            "options": [
+                "/users/{id}",
+                "/users?id=123",
+                "/users/[id]",
+                "/users/(i",
+                ""
+            ],
+            "answer": "/users/{id}",
+            "explanation": "Path parameters are part of URL path using curly braces."
+        },
+        {
+            "question": "What's correct way to send GET request with parameters?\nimport requests",
+            "options": [
+                "requests.get(url, params=params)",
+                "requests.get(url + params)",
+                "requests.get(params=params)",
+                "requests.params(url)"
+            ],
+            "answer": "requests.get(url, params=params)",
+            "explanation": "requests.get accepts params dictionary for query parameters."
+        },
+        {
+            "question": "How do you handle nested iteration for dictionary?\ndata = {'a': {'b': 1}}",
+            "options": [
+                "for k,v in data.items()",
+                "for k in data",
+                "for k,v in data",
+                "for k,v in data.values()"
+            ],
+            "answer": "for k,v in data.items()",
+            "explanation": "items() provides key-value pairs for iteration."
+        },
+        {
+            "question": "What's list comprehension equivalent of:\nmap(lambda x: x*2, filter(lambda x: x>0, nums))",
+            "options": [
+                "[x2 for x in nums]",
+                "[x2 for x in nums if x>0]",
+                "[x for x in nums if x*2>0]",
+                "[x>0 for x in nums]"
+            ],
+            "answer": "[x*2 for x in nums if x>0]",
+            "explanation": "Combines filtering and mapping in single comprehension."
+        },
+        {
+            "question": "What happens when accessing missing nested key?\ndata = {'a': {}}\nprint(data['a']['b'])",
+            "options": [
+                "None",
+                "KeyError",
+                "Empty dict",
+                "False"
+            ],
+            "answer": "KeyError",
+            "explanation": "Accessing non-existent key raises KeyError."
+        },
+        {
+            "question": "How to cache API responses?",
+            "options": [
+                "requests.cache()",
+                "Use requests_cache library",
+                "responses.save()",
+                "cache.request()"
+            ],
+            "answer": "Use requests_cache library",
+            "explanation": "requests_cache provides caching functionality for API calls."
+        },
+        {
+            "question": "What's returned by requests.get()?",
+            "options": [
+                "String",
+                "Dictionary",
+                "Response object",
+                "JSON"
+            ],
+            "answer": "Response object",
+            "explanation": "get() returns Response object with status, content, etc."
+        },
+        {
+            "question": "How to extract specific fields from nested JSON?\ndata = {'user': {'name': 'John', 'age': 30}}",
+            "options": [
+                "data.get('user').get('name')",
+                "data['user']['name']",
+                "Both a and b",
+                "data.user.name"
+            ],
+            "answer": "Both a and b",
+            "explanation": "Can use either get() method or square brackets."
+        },
+        {
+            "question": "What's output of zip() with unequal lists?\nlist(zip([1,2,3], ['a','b']))",
+            "options": [
+                "[(1,'a'), (2,'b'), (3,None)]",
+                "[(1,'a'), (2,'b')]",
+                "Error",
+                "[(1,'a'), (2,'b'), (3)]"
+            ],
+            "answer": "[(1,'a'), (2,'b')]",
+            "explanation": "zip() stops at length of shortest sequence."
+        },
+        {
+            "question": "How to check HTTP response status?",
+            "options": [
+                "response.status",
+                "response.status_code",
+                "response.code",
+                "response.get_status()"
+            ],
+            "answer": "response.status_code",
+            "explanation": "status_code attribute contains HTTP response code."
+        },
+        {
+            "question": "What's purpose of requests params parameter?",
+            "options": [
+                "Authentication",
+                "URL parameters",
+                "Headers",
+                "Body data"
+            ],
+            "answer": "URL parameters",
+            "explanation": "params converts dictionary to URL query parameters."
+        },
+        {
+            "question": "What's the correct way to define a class constructor?",
+            "options": [
+                "def new(self):",
+                "def init(self):",
+                "def constructor(self):",
+                "def new(self):"
+            ],
+            "answer": "def init(self):",
+            "explanation": "init is Python's special method for initializing new class instances."
+        },
+        {
+            "question": "Which represents class inheritance?",
+            "options": [
+                "class Dog extends Animal:",
+                "class Dog inherits Animal:",
+                "class Dog(Animal):",
+                "class Dog -> Animal:"
+            ],
+            "answer": "class Dog(Animal):",
+            "explanation": "Python uses parentheses to indicate inheritance relationship."
+        },
+        {
+            "question": "What's purpose of 'self' parameter?",
+            "options": [
+                "Optional parameter",
+                "References current instance",
+                "Creates new instance",
+                "References parent class"
+            ],
+            "answer": "References current instance",
+            "explanation": "self refers to instance being operated on in method."
+        },
+        {
+            "question": "How do you access parent class's method?",
+            "options": [
+                "parent.method()",
+                "super().method()",
+                "self.parent.method()",
+                "base.method()"
+            ],
+            "answer": "super().method()",
+            "explanation": "super() provides access to parent class methods."
+        },
+        {
+            "question": "What's correct way to create instance variable?\nclass Dog:\ndef __init__(self):",
+            "options": [
+                "name = \"Spot\"",
+                "self.name = \"Spot\"",
+                "Dog.name = \"Spot\"",
+                "@name = \"Spot\""
+            ],
+            "answer": "self.name = \"Spot\"",
+            "explanation": "Instance variables are created using self reference."
+        },
+        {
+            "question": "When to use class variable instead of instance variable?",
+            "options": [
+                "For unique values",
+                "For shared values",
+                "For private data",
+                "For constants only"
+            ],
+            "answer": "For shared values",
+            "explanation": "Class variables are shared among all instances of class."
+        },
+        {
+            "question": "What's difference between str and repr?",
+            "options": [
+                "No difference",
+                "str for users, repr for developers",
+                "str for print, repr for lists",
+                "str is required, repr is optional"
+            ],
+            "answer": "str for users, repr for developers",
+            "explanation": "str provides readable string, repr provides detailed representation."
+        },
+        {
+            "question": "How to handle multiple exception types?\ntry:\n# code\nexcept ?:",
+            "options": [
+                "(TypeError, ValueError)",
+                "TypeError or ValueError",
+                "[TypeError, ValueError]",
+                "TypeError, ValueError"
+            ],
+            "answer": "(TypeError, ValueError)",
+            "explanation": "Multiple exceptions caught using tuple of exception types."
+        },
+        {
+            "question": "What happens when exception isn't caught?",
+            "options": [
+                "Program continues",
+                "Program crashes",
+                "Default handler runs",
+                "Returns None"
+            ],
+            "answer": "Program crashes",
+            "explanation": "Uncaught exceptions terminate program execution."
+        },
+        {
+            "question": "Which is true about class methods?",
+            "options": [
+                "Cannot access instance variables",
+                "Must use @classmethod decorator",
+                "Cannot be inherited",
+                "Must be static"
+            ],
+            "answer": "Must use @classmethod decorator",
+            "explanation": "@classmethod decorator identifies method as class method."
+        },
+        {
+            "question": "How to make private variable?",
+            "options": [
+                "private variable",
+                "_variable",
+                "__variable",
+                "@variable"
+            ],
+            "answer": "__variable",
+            "explanation": "Double underscore makes variable private through name mangling."
+        },
+        {
+            "question": "What's output of isinstance(obj, class)?",
+            "options": [
+                "0 or 1",
+                "True or False",
+                "Yes or No",
+                "Object type"
+            ],
+            "answer": "True or False",
+            "explanation": "isinstance() returns boolean indicating if object is instance of class."
+        },
+        {
+            "question": "When is try/except best used?",
+            "options": [
+                "Always",
+                "For expected errors",
+                "Never",
+                "For testing only"
+            ],
+            "answer": "For expected errors",
+            "explanation": "Try/except handles anticipated error conditions gracefully."
+        },
+        {
+            "question": "What's proper test case structure?",
+            "options": [
+                "Input-output only",
+                "Setup-test-cleanup",
+                "Test-verify",
+                "Run-check"
+            ],
+            "answer": "Setup-test-cleanup",
+            "explanation": "Good tests prepare environment, run test, and clean up after."
+        },
+        {
+            "question": "How to override parent method?",
+            "options": [
+                "Define new method with same name",
+                "Use @override decorator",
+                "Use super() with new code",
+                "Cannot override methods"
+            ],
+            "answer": "Define new method with same name",
+            "explanation": "Method overriding done by redefining method in child class."
+        },
+        {
+            "question": "Which creates class attribute?\nclass Example:\na = 1\ndef __init__(self):\nb = 2",
+            "options": [
+                "Both a and b",
+                "Only a",
+                "Only b",
+                "Neither"
+            ],
+            "answer": "Only a",
+            "explanation": "Variables defined directly in class are class attributes."
+        },
+        {
+            "question": "What's purpose of raise statement?",
+            "options": [
+                "Create variable",
+                "Trigger exception",
+                "Exit program",
+                "Return value"
+            ],
+            "answer": "Trigger exception",
+            "explanation": "raise generates specified exception manually."
+        },
+        {
+            "question": "How to inherit from multiple classes?\nclass Child(?):",
+            "options": [
+                "Parent1, Parent2",
+                "(Parent1, Parent2)",
+                "[Parent1, Parent2]",
+                "Parent1 + Parent2"
+            ],
+            "answer": "Parent1, Parent2",
+            "explanation": "Multiple inheritance uses comma-separated parent classes."
+        },
+        {
+            "question": "What's correct way to call parent's init?",
+            "options": [
+                "Parent.init(self)",
+                "super().init()",
+                "self.parent.init()",
+                "Both a and b"
+            ],
+            "answer": "Both a and b",
+            "explanation": "Can use either super() or direct class reference."
+        },
+        {
+            "question": "When to use @staticmethod?",
+            "options": [
+                "Always",
+                "For class-related utilities",
+                "For instance methods",
+                "Never"
+            ],
+            "answer": "For class-related utilities",
+            "explanation": "Static methods used for utilities that don't need instance/class"
+        }
+    ]
+}
