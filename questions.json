@@ -261,7 +261,7 @@
                 "df.get_numeric()",
                 "df.numbers"
             ],
-            "answer": "df.select_dtypes(include=['number']) Explanation: select_dtypes() filters columns by",
+            "answer": "df.select_dtypes(include=['number'])",
             "explanation": "select_dtypes() filters columns by\ntheir data type."
         },
         {
@@ -705,7 +705,7 @@
             "explanation": "Similar matrices share size, determinant, and other properties."
         },
         {
-            "question": "",
+            "question": "What is span{[1,1], [2,2]}?",
             "options": [
                 "R\u00b2",
                 "Line through origin",
@@ -2240,11 +2240,8 @@
             "options": [
                 "sub in string",
                 "string.contains(su",
-                "",
                 "string.has(su",
-                "",
-                "string.find(su",
-                ""
+                "string.find(su"
             ],
             "answer": "sub in string",
             "explanation": "'in' operator checks for substring existence."
@@ -2696,8 +2693,7 @@
                 "/users/{id}",
                 "/users?id=123",
                 "/users/[id]",
-                "/users/(i",
-                ""
+                "/users/(i"
             ],
             "answer": "/users/{id}",
             "explanation": "Path parameters are part of URL path using curly braces."
