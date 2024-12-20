@@ -342,7 +342,7 @@
             "explanation": "The second equation is a multiple of the first (2\u00d7), making the system linearly\ndependent. The determinant is zero, indicating infinite solutions."
         },
         {
-            "question": "",
+            "question": "For vectors v = [1, 2] and w = [3, 4], what is v·w?",
             "options": [
                 "[3, 8]",
                 "11",
@@ -360,7 +360,7 @@
                 "1",
                 "0"
             ],
-            "answer": "1 Explanation: Each row is a multiple of [1 2 3], making only one linearly",
+            "answer": "1",
             "explanation": "Each row is a multiple of [1 2 3], making only one linearly\nindependent row."
         },
         {
@@ -474,14 +474,14 @@
             "explanation": "Rank 2 means null space dimension 1, but A might still have 3 independent\neigenvectors."
         },
         {
-            "question": "",
+            "question": "Which operation preserves eigenvalues?",
             "options": [
                 "Matrix transposition",
                 "Adding identity matrix",
                 "Similar transformation",
                 "Matrix multiplication"
             ],
-            "answer": "Similar transformation Explanation:",
+            "answer": "Similar transformation",
             "explanation": "Similar matrices P^(-1)AP share same eigenvalues."
         },
         {
