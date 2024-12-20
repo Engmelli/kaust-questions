@@ -793,14 +793,14 @@
             "explanation": "Using addition rule: P(A\u222aB) = P(A) + P(B) - P(A\u2229B) = 0.3 + 0.4 -\n0.2 = 0.5"
         },
         {
-            "question": "",
+            "question": "In a normal distribution, what percentage of data falls within two standard deviations?",
             "options": [
                 "68%",
                 "95%",
                 "99%",
                 "99.7%"
             ],
-            "answer": "95% Explanation: The empirical rule states that",
+            "answer": "95%",
             "explanation": "The empirical rule states that\napproximately 95% of data falls within \u00b12 standard deviations of the mean."
         },
         {
@@ -1110,7 +1110,7 @@
                 "Saddle point",
                 "Inflection point"
             ],
-            "answer": "Minimum Explanation: First derivative zero and positive second derivative indicates",
+            "answer": "Minimum",
             "explanation": "First derivative zero and positive second derivative indicates\nminimum."
         },
         {
@@ -1158,7 +1158,7 @@
             "explanation": "This is binary cross-entropy loss, standard for classification."
         },
         {
-            "question": "",
+            "question": "The derivative of tan(x) is",
             "options": [
                 "sec\u00b2(x)",
                 "-sec\u00b2(x)",
